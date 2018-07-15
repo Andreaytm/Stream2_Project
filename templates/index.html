@@ -6,7 +6,21 @@
     <link rel="stylesheet" href="{{ url_for ('static', filename ='lib/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{ url_for ('static', filename ='lib/css/keen-dashboards.css')}}">
 </head>
-<body>
+<body class="application">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="./">School Donations Data</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/a">A</a></li>
+            <li><a href="/b">B</a></li>
+            <li><a href="/c">C</a></li>
+        </ul>
+            <!--currently ABC added as placeholder text-->
+    </div>
+</nav>
+
 
 <script src ="{{ url_for ('static', filename = 'lib/js/jquery.min.js')}}"></script>
 <script src ="{{ url_for ('static', filename = 'lib/js/bootstrap.min.js')}}"></script>
