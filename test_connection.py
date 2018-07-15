@@ -14,12 +14,12 @@ conn = mongo_connect()
 db = conn['schooldonors']
 print db  # Database (MongoClient('localhost' 27017), u'schooldonors')
 
-# Note test 1 connection is successful Mongo is connected!
+# Note test 1 is successful printed: Mongo is connected!
 
 coll = db.donations
 print db.collection_names()  # [u'donations']
 
-# Note test 2 connection is successful printed name of collection
+# Note test 2 is successful printed name of collection: donations
 
 print "IL count"
 results = coll.find({"school_state": "IL"})
@@ -151,9 +151,11 @@ results = coll.find({"school_state": "AK"})
 print results.count()
 
 print "----------------------------------"
-
 print "Collection: Donations count"
 print coll.count()  # 386455
+
+# Note test 3 is successful printed counts of data from school_states requested
+
 
 """ Note require additional reduction of database - current includes states:
 IL, SC, TX, IN, TN, KS, CO, MA, RI, MI, MN, AZ, KY, 
@@ -162,7 +164,7 @@ UT, OH, FL, OR, GA, NV, ID, WI, HI, NH, MT, AR, AK
 
 """RESULTS OF COUNT
 IL count *remove*
-49669x
+49669
 ----------------------------------
 SC count *remove*
 24735
@@ -244,6 +246,8 @@ Collection: Donations count
 """
 
 # Removed more data to limit upload speed via mongo
+# Selection of school_states to be removed based on count similar to KY
+
 """
 New collection includes following states = KS, MN, KY*, ID, HI, NH, MT, AK (* = project school_state)
 Kept states similar to school_state = KY for comparative purposes.
@@ -275,3 +279,10 @@ AK count
 Collection: Donations count
 25696
 """
+print "----------------------------------"
+
+print "RR count"
+results = coll.find({"school_state": "RR"})
+print results.count()  # should display 0
+
+# Note test 4 is successful, printed 0 results count for school_state that is non-existent
