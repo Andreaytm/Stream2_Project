@@ -1,0 +1,79 @@
+/* chart text for main total donations*/
+.chart-stage {
+    background: white;
+    position: relative;
+    font-size: 29px;
+    color: black;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 0px;
+}
+
+.chart-wrapper{
+
+}
+.chart-title{
+
+}
+
+.navbar-header{
+
+}
+
+body{
+
+}
+
+#number-donations-nd {
+   font-size: 60px;
+}
+
+#total-donations-nd {
+   font-size: 60px;
+}
+
+/* Row chart text*/
+.dc-chart g.row text {
+    fill: black;
+    font-size: 12px;
+    font-family: Calibri;
+}
+#total-donations {
+    background: #c7254e;
+    width: 200px;
+    position: relative;
+    height: 60px;
+    font-size: 29px;
+    color: white;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 0px;
+}
+#net-donations {
+   background: #33CC99;
+   width: 200px;
+   position: relative;
+   height: 60px;
+   font-size: 29px;
+   color: white;
+   vertical-align: middle;
+   text-align: center;
+   padding-top: 12px;
+   padding-bottom: 0px;
+}
+.dc-select-menu {
+   background: #33CC99;
+   width: 80%;
+   border: none;
+   position: relative;
+   height: 31px;
+   font-size: 15px;
+   color: white;
+   vertical-align: middle;
+   text-align: center;
+   padding-top: 4px;
+   padding-bottom: 0px;
+
+}
