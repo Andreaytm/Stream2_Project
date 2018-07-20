@@ -1,23 +1,23 @@
 queue()
-    .defer(d3.json, "/schooldonors/donations")
+    .defer(d3.json, "/donors/donations")
     .await(makeGraphs);
 
-function makeGraphs(error, schoolDonorsDonations) {
+function makeGraphs(error, donorsdonations) {
     if(error) {
         console.error("makeGraphs error on receiving dataset:", error.statusText);
         throw error;
     }
 
-    //Clean schoolDonorsDonations data
+    //Clean donorsdonations data
     var dateFormat = d3.time.format("%Y-%m-%d %H:%M:%S");
-    schoolDonorsDonations.forEach(function (d) {
+    donorsdonations.forEach(function (d) {
         d["date_posted"] = dateFormat.parse(d["date_posted"]);
         d["date_posted"].setDate(1);
         d["total_donations"] = +d["total_donations"];
     });
 
-    //Create a crossfilter instance
-    var ndx = crossfilter(schoolDonorsDonations);
+    //Create a Crossfilter instance
+    var ndx = crossfilter(donorsdonations);
 
     //Define Dimensions
     var dateDim = ndx.dimension(function (d) {
@@ -68,9 +68,10 @@ function makeGraphs(error, schoolDonorsDonations) {
     var totalDonations = ndx.groupAll().reduceSum(function (d) {
         return d["total_donations"];
     });
+
     // Define values to be used in charts
     var minDate = dateDim.bottom(1)[0]["date_posted"];
-    var maxDate = date.Dim.top(1)[0]["date_posted"];
+    var maxDate = dateDim.top(1)[0]["date_posted"];
 
     // Charts
     //Line charts
@@ -100,8 +101,8 @@ function makeGraphs(error, schoolDonorsDonations) {
         .ordinalColors(["#0078d7"])
         .width(1200)
         .height(300)
-        .margins({top:30, right:50, bottom:30, left: 50})
-        .dimensions(dateDim)
+        .margins({top: 30, right: 50, bottom: 30, left: 50})
+        .dimension(dateDim)
         .group(numDonationsByDate)
         .renderArea(true)
         .transitionDuration(500)
@@ -118,14 +119,14 @@ function makeGraphs(error, schoolDonorsDonations) {
     //number
     numberDonationsND //1 figure
         .formatNumber(d3.format("d"))
-        .valueAccessor(function(d) {
+        .valueAccessor(function (d) {
             return d;
         })
         .group(all);
 
     totalDonationsND // 1 figure
         .formatNumber(d3.format("d"))
-        .valueAccessor(function(d) {
+        .valueAccessor(function (d) {
             return d;
         })
         .group(totalDonations)
