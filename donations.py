@@ -19,15 +19,15 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/schooldonors/donations")
-def schooldonors():
+@app.route("/donors/donations")
+def school_donors():
     """
     Flask view to serve project data from MongoDB in JSON format
     """
 
     # Constant to define the record fields that are to be retrieved
     FIELDS = {
-        'id': False, 'funding_status': True, 'school_state': True,
+        '_id': False, 'funding_status': True, 'school_state': True,
         'resource_type': True, 'poverty_level': True,
         'date_posted': True, 'total_donations': True,
         'primary_focus_area': True, 'primary_focus_subject': True,
@@ -40,7 +40,7 @@ def schooldonors():
         # Define wish to access collection: donations
         collection = conn[DBS_NAME][COLLECTION_NAME]
         # Retrieve result set only with fields defined in FIELDS, given count no need to limit results
-        donations = collection.find(projection=FIELDS)
+        donations = collection.find(projection=FIELDS, limit=20000)
         # Convert donations to a list in a JSON object and return JSON data
         return json.dumps(list(donations))
 
