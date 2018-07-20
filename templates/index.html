@@ -5,6 +5,7 @@
     <title>School Donations Data</title>
     <link rel="stylesheet" href="{{ url_for ('static', filename ='lib/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{ url_for ('static', filename ='lib/css/keen-dashboards.css')}}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/dc.css')}}">
     <link rel="stylesheet" href="{{ url_for ('static', filename = 'css/style.css')}}">
 </head>
 <body class="application">
@@ -40,10 +41,10 @@
                 <div class="col-sm-12">
                     <div class="chart-wrapper">
                         <div class="chart-title">
-                            Chart 1 Title
+                            Chart 1 Title Time chart sm-12
                         </div>
                         <div class="chart-stage">
-                            <div id="chart1"></div>
+                            <div id="time-line"></div>
                         </div>
                     </div>
                 </div>
@@ -53,10 +54,10 @@
                 <div class="col-sm-6">
                     <div class="chart-wrapper">
                         <div class="chart-title">
-                            Chart 2 Title
+                            Chart 2 Title pf subject sm-6
                         </div>
                         <div class="chart-stage">
-                            <div id="chart2"></div>
+                            <div id="pf-subject-rc"></div>
                         </div>
                     </div>
                 </div>
@@ -65,10 +66,10 @@
                 <div class="col-sm-6">
                     <div class="chart-wrapper">
                         <div class="chart-title">
-                            Chart 3 Title
+                            Chart 3 Title sm-6 tf america
                         </div>
                         <div class="chart-stage">
-                            <div id="chart3"></div>
+                            <div id="tf-america-pie"></div>
                         </div>
                     </div>
                 </div>
@@ -79,10 +80,10 @@
         <div class="col-sm-3">
             <div class="chart-wrapper">
                 <div class="chart-title">
-                    Chart 4 Title
+                    Chart 4 Title sm-3 grade level
                 </div>
                 <div class="chart-stage">
-                    <div id="chart4"></div>
+                    <div id="grade-level-pie"></div>
                 </div>
             </div>
         </div>
@@ -92,10 +93,10 @@
         <div class="col-sm-6">
             <div class="chart-wrapper">
                 <div class="chart-title">
-                    Chart 5 Title
+                    Chart 5 Title Resources sm-6
                 </div>
                 <div class="chart-stage">
-                    <div id="chart5"></div>
+                    <div id="resource-type-rc"></div>
                 </div>
             </div>
         </div>
@@ -105,10 +106,10 @@
         <div class="col-sm-3">
             <div class="chart-wrapper">
                 <div class="chart-title">
-                    Chart 6 Title
+                    Chart 6 Title Funding sm-3
                 </div>
                 <div class="chart-stage">
-                    <div id="chart6"></div>
+                    <div id="funding-status-pie"></div>
                 </div>
             </div>
         </div>
@@ -118,55 +119,69 @@
         <div class="col-sm-3">
             <div class="chart-wrapper">
                 <div class="chart-title">
-                    Chart 7 Title
+                    Chart 7 Title Poverty level col-sm-3
                 </div>
                 <div class="chart-stage">
-                    <div id="chart7"></div>
+                    <div id="poverty-level-rc"></div>
                 </div>
             </div>
         </div>
         <!--end chart 7-->
 
-        <!--chart 8-->
-        <div class="col-sm-3">
+        <!--chart 8 Menu Select-->
+        <div class="col-sm-6">
             <div class="chart-wrapper">
                 <div class="chart-title">
-                    Chart 8 Title
+                    Chart 8 Title col-sm-6 Donation State
                 </div>
                 <div class="chart-stage">
-                    <div id="chart8"></div>
+                    <div id="menu-select"></div>
                 </div>
             </div>
         </div>
         <!--end chart 8-->
 
-        <!--chart 9-->
+        <!--chart 9 Metric 1-->
         <div class="col-sm-2">
             <div class="chart-wrapper">
                 <div class="chart-title">
-                    Chart 9 Title
+                    Total Number of Donations - col-sm-2
                 </div>
                 <div class="chart-stage">
-                    <div id="chart9"></div>
+                    <div id="number-donations-nd"></div>
                 </div>
             </div>
         </div>
         <!--end chart 9-->
 
-        <!--chart 10-->
+        <!--chart 10 Metric 2-->
         <div class="col-sm-2">
             <div class="chart-wrapper">
                 <div class="chart-title">
-                    Chart 10 Title
+                    Total Donations in USD (Col-sm-2)
                 </div>
                 <div class="chart-stage">
-                    <div id="chart10"></div>
+                    <div id="total-donations-nd"></div>
                 </div>
             </div>
         </div>
+        <!--end chart 10-->
+
+<!--chart 11 -->
+        <div class="col-sm-2">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    PF area (Col-sm-2)
+                </div>
+                <div class="chart-stage">
+                    <div id="pf-area-rc"></div>
+                </div>
+            </div>
+        </div>
+<!--end chart 11-->
     </div>
 </div>
-<!--end chart 10-->
+
 <hr>
 <p class="small text-muted">
         Data Visualisation - Stream 2 Project -Code Institute -
