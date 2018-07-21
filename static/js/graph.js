@@ -90,7 +90,7 @@ function makeGraphs(error, donorsdonations) {
     var pfAreaChart = dc.rowChart("#pf-area-rc");
     var pfSubjectChart = dc.rowChart("#pf-subject-rc");
 
-    //pie charts
+    //Pie charts
     var fundingStatusChart = dc.pieChart("#funding-status-pie");
     var gradeLevelChart = dc.pieChart("#grade-level-pie");
     var tfAmericaChart = dc.pieChart("#tf-america-pie");
@@ -109,7 +109,7 @@ function makeGraphs(error, donorsdonations) {
         .x(d3.time.scale().domain([minDate, maxDate]))
         .elasticY(true)
         .xAxisLabel("Year")
-        .yAxis().ticks(5);
+        .yAxis().ticks(6);
 
     //select
     selectField  // ["KS", "MN", "KY", "ID", "HI", "NH", "MT", "AK"]=8
@@ -133,42 +133,52 @@ function makeGraphs(error, donorsdonations) {
         .formatNumber(d3.format(".3s"));
 
     //row
-    resourceTypeChart // books, tech, supplies = 3 (removed 'other', 'visitors' and 'trips' as no detail into spend)
-        .ordinalColors(["#00ff00", "#10aa35", "#0078d7", "#ca83bf", "#831c73"])
+    resourceTypeChart // books, tech, supplies = 3
+        .ordinalColors(["#10aa35", "#0078d7", "#831c73"])
         .width(300)
         .height(250)
         .dimension(resourceTypeDim)
         .group(numDonationsByResourceType)
         .xAxis().ticks(4);
 
-    povertyLevelChart // low, moderate, high, highest =4
+    povertyLevelChart // highest, high, moderate, low =4
         .ordinalColors(["#ff0000", "#f8a900", "#f8f800", "#00ff00"])
         .width(300)
         .height(250)
         .dimension(povertyLevelDim)
         .group(numDonationsByPovertyLevel)
+        .ordering(function(d) { return -d.value }) //reordered so type of poverty with largest count is at top of chart.
         .xAxis().ticks(4);
 
     pfAreaChart /// math & science, literacy & language, applied learning, music & arts,
                 /// history & civics, special needs, health & sports =7
-        .ordinalColors(["#ff0000", "#f8a900", "#f8f800", "#00ff00"])
+        .ordinalColors(["#ff0000", "#f8a900", "#f8f800", "#10aa35", "#0078d7", "#ca83bf", "#831c73"])
         .width(300)
         .height(250)
         .dimension(pfAreaDim)
         .group(numDonationsByPrimaryFocusArea)
         .xAxis().ticks(4);
 
-    pfSubjectChart  //28
-        .ordinalColors(["#ff0000", "#f8a900", "#f8f800", "#00ff00"])
-        .width(300)
-        .height(250)
+    pfSubjectChart  //27
+        .ordinalColors([
+            "#0078d7", "#ff0000","#f8f800", "#ff0000", //1B 2R 3Y 4R
+            "#ff0000", "#10aa35", "#ff0000" ,"#f8f800",//5R 6G 7R 8Y
+            "#0078d7", "#ff0000", "#10aa35", "#f8a900",//9B 10R 11G 12O
+            "#0078d7","#f8a900", "#f8f800","#10aa35", //13B 14O 15Y 16G
+            "#10aa35", "#0078d7","#ca83bf","#f8a900",//17G 18B 19I 20O
+            "#ff0000","#ff0000","#ca83bf","#f8f800", // 21R 22R 23I 24Y
+            "#831c73","#f8a900","#ca83bf" //25P 26O 27I
+
+        ])
+        .width(1200)
+        .height(500)
         .dimension(pfSubjectDim)
         .group(numDonationsByPrimaryFocusSubject)
-        .xAxis().ticks(4);
+        .xAxis().ticks(8);
 
     //pie
-    fundingStatusChart //completed, expired, reallocated, live = 4
-        .ordinalColors(["#ff0000", "#f8f800", "#00ff00"])
+    fundingStatusChart //completed, expired, reallocated, live = 4 (lime/ red /yellow/ forestgreen)
+        .ordinalColors([ "#00ff00", "#ff0000", "#f8f800", "#10aa35"])
         .height(220)
         .radius(90)
         .innerRadius(40)
@@ -176,8 +186,8 @@ function makeGraphs(error, donorsdonations) {
         .dimension(fundingStatusDim)
         .group(numDonationsByFundingStatus);
 
-    gradeLevelChart // 3-5, preK-2, 6-8, 9-12 =4
-        .ordinalColors(["#ff0000", "#f8f800", "#00ff00"])
+    gradeLevelChart // 3-5, preK-2, 6-8, 9-12 =4 (orange/ yellow/ dodgerblue/ purple)
+        .ordinalColors(["#f8a900", "#f8f800", "#0078d7", "#831c73"])
         .height(220)
         .radius(90)
         .innerRadius(40)
@@ -185,8 +195,8 @@ function makeGraphs(error, donorsdonations) {
         .dimension(gradeLevelDim)
         .group(numDonationsByGradeLevel);
 
-    tfAmericaChart //true, false
-        .ordinalColors(["#ff0000", "#f8f800", "#00ff00"])
+    tfAmericaChart // false, true (red/ lime)
+        .ordinalColors(["#ff0000", "#00ff00"])
         .height(220)
         .radius(90)
         .innerRadius(40)
