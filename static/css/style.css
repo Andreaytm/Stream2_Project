@@ -20,6 +20,13 @@
     background: #400743;
     position: fixed;
 }
+button{
+    background-color: #ffffff;
+    color: #400743;
+    border-radius: 10px;
+    margin: 10px;
+    font-weight: bold;
+}
 
 /*Body*/
 body.application {
