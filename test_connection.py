@@ -11,7 +11,7 @@ def mongo_connect():
 
 
 conn = mongo_connect()
-db = conn['schooldonors']
+db = conn['USschooldonors']
 print db  # Database (MongoClient('localhost' 27017), u'schooldonors')
 
 # Note test 1 is successful printed: Mongo is connected!
