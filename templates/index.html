@@ -3,44 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>School Donations Data</title>
-    <link rel="stylesheet" href="{{ url_for ('static', filename ='lib/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{ url_for ('static', filename ='lib/css/keen-dashboards.css')}}">
-    <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/dc.css')}}">
-    <link rel="stylesheet" href="{{ url_for ('static', filename = 'css/style.css')}}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename = 'lib/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename = 'lib/css/keen-dashboards.css') }}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename = 'lib/css/dc.css') }}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename = 'css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename = 'lib/css/introjs.css') }}">
 </head>
 <body class="application">
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="./">School Donations Data</a>
+            <button class="intro_button" type="button" autofocus onclick ="javascript:introJs().start();">Click
+                for a quick tour!</button>
+            <button class="reset_button" type="button" autofocus onclick ="javascript:dc.filterAll();
+            dc.renderAll();">Reset All</button>
         </div>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="/a">A</a></li>
-            <li><a href="/b">B</a></li>
-            <li><a href="/c">C</a></li>
-        </ul>
-            <!--currently ABC added as placeholder text-->
     </div>
-</nav>
-<!-- chart placement tbc - placeholder chart placement added -sizing and style to be determined
-'funding_status' (pie)
-'school_state' (menu)
-'resource_type' (bar)
-'poverty_level'(bar/pie)
-'date_posted' (line)
-'total_donations' (metric)
-'primary_focus_area' (bar/pie)
-'primary_focus_subject' (bar/pie)
-'teacher_teach_for_america' (bar/pie)
-'grade_level' (bar/pie) note 10 total-->
+</div>
 <div id="outer" class="container-fluid">
     <div class="row">
         <div class="col-sm-12">
             <div class="row">
                 <!--Start Chart Select State (Menu Select)-->
                 <div class="col-sm-2">
-                    <div class="chart-wrapper">
-                        <div class="chart-title">
+                    <div class="chart-wrapper"><!--// ["AK", "DE", "HI", "ID", "MN", "KS", "KY" ]=7-->
+                        <div class="chart-title" data-step="1" data-intro="Use the drop-down menu to see statistics
+                        for donations given per school state. 7 States were chosen at random to show the current
+                        education improvements required in the state of Kentucky.
+                        These include: Alaska (AK), Delaware (DE), Hawaii (HI), Idaho (ID), Minnesota (MN), Kansas (KS),
+                        and Kentucky (KY)." style="font-weight: normal" data-position="right">
                             Donation State
                         </div>
                         <div class="chart-stage">
@@ -52,23 +44,26 @@
                 <!--Start Chart Total No Donations Metric 1-->
                 <div class="col-sm-2">
                     <div class="chart-wrapper">
-                        <div class="chart-title">
-                        Total Number of Donations
+                        <div class="chart-title" data-step="2" data-intro="This number shows the total number of
+                        donations given for the selected school state."
+                             style="font-weight: normal" data-position="right">
+                            Total Number of Donations
                         </div>
-                        <div class="chart-stage">
+                        <div class="chart-stage" id="metric_1">
                             <div id="number-donations-nd"></div>
                         </div>
                     </div>
                 </div>
                 <!--End Chart Total No Donations Metric 1-->
-
                 <!--Start Chart Total Donations USD Metric 2-->
                 <div class="col-sm-2">
                     <div class="chart-wrapper">
-                        <div class="chart-title">
-                        Total Donations in USD
+                        <div class="chart-title" data-step="3"
+                             data-intro="This number shows the total value of donations given in US Dollars."
+                             style="font-weight: normal" data-position="right">
+                            Total Donations in USD
                         </div>
-                        <div class="chart-stage">
+                        <div class="chart-stage" id="metric_2">
                             <div id="total-donations-nd"></div>
                         </div>
                     </div>
@@ -77,8 +72,11 @@
                 <!--Start Chart Chart Poverty Level (Row)-->
                 <div class="col-sm-3">
                     <div class="chart-wrapper">
-                        <div class="chart-title">
-                        Poverty level
+                        <div class="chart-title" data-step="4"
+                             data-intro="This bar graph shows the poverty levels for state areas.
+                        The graph is displayed in terms of highest prevalent poverty from the top"
+                             style="font-weight: normal" data-position="left">
+                            Poverty level
                         </div>
                         <div class="chart-stage">
                             <div id="poverty-level-rc"></div>
@@ -89,10 +87,16 @@
                 <!--Start Chart Funding Status Pie-->
                 <div class="col-sm-3">
                     <div class="chart-wrapper">
-                        <div class="chart-title">
+                        <div class="chart-title" data-step="5"
+                             data-intro="This pie chart shows the funding status in each selected state.
+                        Completed means that the funding has been given to the school.
+                        Expired means that the funding allocated is no longer available.
+                        Reallocated means that the funding that was allocated to the school has been taken elsewhere.
+                        Live means that the school will be receiving funding in the future."
+                             style="font-weight: normal" data-position="left">
                             Funding Status
                         </div>
-                        <div class="chart-stage">
+                        <div class="chart-stage pie">
                             <div id="funding-status-pie"></div>
                         </div>
                     </div>
@@ -101,11 +105,13 @@
                 <!--Start Chart Time Series -->
                 <div class="col-sm-12">
                     <div class="chart-wrapper">
-                        <div class="chart-title">
+                        <div class="chart-title" data-step="6"
+                             data-intro="A time-line of donations made"
+                             style="font-weight: normal" data-position="right">
                             Number of Donations Made
                         </div>
                         <div class="chart-stage">
-                            <div id="time-line"></div>
+                            <div id="time-chart"></div>
                         </div>
                     </div>
                 </div>
@@ -115,7 +121,9 @@
         <!--Start Resources Bar Chart-->
         <div class="col-sm-3">
             <div class="chart-wrapper">
-                <div class="chart-title">
+                <div class="chart-title" data-step="7"
+                     data-intro="The type and amount of resources donated through DonorsChoose.org"
+                     style="font-weight: normal" data-position="left">
                     Resources Donated
                 </div>
                 <div class="chart-stage">
@@ -127,10 +135,12 @@
         <!--Start Teach for America Pie Chart-->
         <div class="col-sm-3">
             <div class="chart-wrapper">
-                <div class="chart-title">
-                    Chart 3 Title sm-6 tf america
+                <div class="chart-title" data-step="8"
+                     data-intro="The amount of 'Teach for America' Teachers available"
+                     style="font-weight: normal" data-position="right">
+                    'Teach for America' Teacher Available in School
                 </div>
-                <div class="chart-stage">
+                <div class="chart-stage pie">
                     <div id="tf-america-pie"></div>
                 </div>
             </div>
@@ -138,11 +148,13 @@
         <!--End Teach for America Pie Chart-->
         <!--Start School Grade Levels Chart-->
         <div class="col-sm-3">
-            <div class="chart-wrapper">
-                <div class="chart-title">
-                   School Grade Levels
+            <div class="chart-wrapper ">
+                <div class="chart-title" data-step="9"
+                     data-intro="The school grade levels of pupils at selected school states"
+                     style="font-weight: normal" data-position="left">
+                    School Grade Levels
                 </div>
-                <div class="chart-stage">
+                <div class="chart-stage pie">
                     <div id="grade-level-pie"></div>
                 </div>
             </div>
@@ -151,7 +163,9 @@
         <!--Start Primary Focus Areas Bar Chart -->
         <div class="col-sm-3">
             <div class="chart-wrapper">
-                <div class="chart-title">
+                <div class="chart-title" data-step="10"
+                     data-intro="This chart shows the primary focus areas of selected school states"
+                     style="font-weight: normal" data-position="left">
                     Primary Focus Areas
                 </div>
                 <div class="chart-stage">
@@ -163,7 +177,9 @@
         <!--Start Primary Focus Subjects Bar Chart-->
         <div class="col-sm-12">
             <div class="chart-wrapper">
-                <div class="chart-title">
+                <div class="chart-title" data-step="11"
+                     data-intro="This chart shows the primary focus subjects of selected school states"
+                     style="font-weight: normal" data-position="right">
                     Primary Focus Subjects
                 </div>
                 <div class="chart-stage">
@@ -177,17 +193,18 @@
 
 <hr>
 <p class="small text-muted">
-        Data Visualisation - Stream 2 Project -Code Institute -
+    Data Visualisation - Stream 2 Project -Code Institute -
     <a href="https://github.com/Andreaytm"> Andrea Ma(2018)
     </a>
 </p>
-<script src ="{{ url_for ('static', filename = 'lib/js/jquery.min.js')}}"></script>
-<script src ="{{ url_for ('static', filename = 'lib/js/bootstrap.min.js')}}"></script>
-<script src ="{{ url_for ('static', filename = 'lib/js/crossfilter.js')}}"></script>
-<script src ="{{ url_for ('static', filename = 'lib/js/d3.js')}}"></script>
-<script src ="{{ url_for ('static', filename = 'lib/js/dc.js')}}"></script>
-<script src ="{{ url_for ('static', filename = 'lib/js/queue.js')}}"></script>
-<script src ="{{ url_for ('static', filename = 'lib/js/keen.min.js')}}"></script>
-<script src ="{{ url_for ('static', filename = 'js/graph.js')}}"></script>
+<script src="{{ url_for ('static', filename = 'lib/js/jquery.min.js') }}"></script>
+<script src="{{ url_for ('static', filename = 'lib/js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for ('static', filename = 'lib/js/crossfilter.js') }}"></script>
+<script src="{{ url_for ('static', filename = 'lib/js/d3.js') }}"></script>
+<script src="{{ url_for ('static', filename = 'lib/js/dc.js') }}"></script>
+<script src="{{ url_for ('static', filename = 'lib/js/queue.js') }}"></script>
+<script src="{{ url_for ('static', filename = 'lib/js/keen.min.js') }}"></script>
+<script src="{{ url_for ('static', filename = 'js/graph.js') }}"></script>
+<script src="{{ url_for ('static', filename = 'lib/js/intro.js') }}" type = "text/javascript"></script>
 </body>
 </html>
