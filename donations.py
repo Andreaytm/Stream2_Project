@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 MONGODB_HOST = 'localhost'
 MONGODB_PORT = 27017
-DBS_NAME = 'schooldonors'
+DBS_NAME = 'USschooldonors'
 COLLECTION_NAME = 'donations'
 
 
@@ -19,7 +19,7 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/donors/donations")
+@app.route("/USdonors/donations")
 def school_donors():
     """
     Flask view to serve project data from MongoDB in JSON format
@@ -40,7 +40,7 @@ def school_donors():
         # Define wish to access collection: donations
         collection = conn[DBS_NAME][COLLECTION_NAME]
         # Retrieve result set only with fields defined in FIELDS, given count no need to limit results
-        donations = collection.find(projection=FIELDS, limit=20000)
+        donations = collection.find(projection=FIELDS, limit=25000)
         # Convert donations to a list in a JSON object and return JSON data
         return json.dumps(list(donations))
 
