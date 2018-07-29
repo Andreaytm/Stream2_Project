@@ -130,7 +130,7 @@ function makeGraphs(error, donationsJson) {
             return d;
         })
         .group(totalDonations)
-        .formatNumber(d3.format(".3s"));
+        .formatNumber(d3.format("$.3s"));
 
     //row
     resourceTypeChart // books, other, supplies, tech, trips, visitors= 6 [roygbi]
@@ -180,6 +180,7 @@ function makeGraphs(error, donationsJson) {
         .ordinalColors(["#00ff00", "#ff0000", "#10aa35", "#f8f800"])
         .height(220)
         .radius(90)
+        .innerRadius(70)
         .transitionDuration(1500)
         .dimension(fundingStatusDim)
         .group(numDonationsByFundingStatus)
