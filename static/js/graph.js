@@ -10,7 +10,7 @@ function makeGraphs(error, donationsJson) {
 
     //Clean donorsdonations data
     var donorsDonations = donationsJson
-    var dateFormat= d3.time.format(("%d/%m/%Y %H:%M"));
+    var dateFormat= d3.time.format("%d/%m/%Y %H:%M");
     donorsDonations.forEach(function(d) {
         d["date_posted"] = dateFormat.parse(d["date_posted"]);
         d["date_posted"].setDate(1);
@@ -111,7 +111,7 @@ function makeGraphs(error, donationsJson) {
         .xAxisLabel("Year")
         .yAxis().ticks(6);
 
-    //select // ["KS", "DE", "MN", "KY", "HI", "ID", "AK"]=7
+    //select // ["AK", "DE", "HI", "ID", "KS", "KY", "MN", "MT", "NH" ]=9
     selectField
         .dimension(stateDim)
         .group(stateGroup);
@@ -134,12 +134,12 @@ function makeGraphs(error, donationsJson) {
 
     //row
     resourceTypeChart // books, other, supplies, tech, trips, visitors= 6 [roygbi]
-        .ordinalColors(["#ff0000", "#f8a900", "#10aa35", "#0078d7", "#f8f800", "#ca83bf"])
+        .ordinalColors(["#ff0000", "#f8a900", "#f8f800", "#10aa35", "#0078d7", "#ca83bf"])
         .width(300)
         .height(250)
         .dimension(resourceTypeDim)
         .group(numDonationsByResourceType)
-        .xAxis().ticks(4);
+        .xAxis().ticks(6);
 
     povertyLevelChart // highest, high, moderate, low =4 [royg]
         .ordinalColors(["#ff0000", "#f8a900", "#f8f800", "#00ff00"])
@@ -147,29 +147,27 @@ function makeGraphs(error, donationsJson) {
         .height(250)
         .dimension(povertyLevelDim)
         .group(numDonationsByPovertyLevel)
-        .ordering(function (d) {
-            return -d.value
-        }) //reordered so type of poverty with largest count is at top of chart.
-        .xAxis().ticks(4);
+        .ordering(function (d) { return -d.value }) //reordered so poverty with largest count is at top of chart.
+        .xAxis().ticks(6);
 
     pfAreaChart /// R =applied learning,  O=health & sports, Y=history & civics, G =literacy & language,
-    // B =math & science, P =music & arts, I= special needs =7
+    // B =math & science, I =music & arts, P= special needs =7
         .ordinalColors(["#ff0000", "#f8a900", "#f8f800", "#10aa35", "#0078d7", "#ca83bf", "#831c73"])
         .width(300)
         .height(250)
         .dimension(pfAreaDim)
         .group(numDonationsByPrimaryFocusArea)
-        .xAxis().ticks(7);
+        .xAxis().ticks(6);
 
     pfSubjectChart  //28
         .ordinalColors([
             "#0078d7", "#ff0000", "#f8f800", "#ff0000", //1B 2R 3Y 4R
-            "#ff0000", "#10aa35", "#ff0000", "#f8f800",//5R 6G 7R 8Y
-            "#0078d7", "#ff0000", "#10aa35", "#f8a900",//9B 10R 11G 12O
-            "#0078d7", "#f8a900", "#f8f800", "#10aa35", //13B 14O 15Y 16G
-            "#10aa35", "#0078d7", "#ca83bf", "#f8a900",//17G 18B 19I 20O
-            "#ff0000", "#ff0000", "#ca83bf", "#f8f800", // 21R 22R 23I 24Y
-            "#831c73", "#f8a900", "#ca83bf" //25P 26O 27I
+            "#ff0000", "#10aa35", "#ff0000", "#f8f800", //5R 6G 7R 8Y
+            "#0078d7", "#ff0000", "#f8f800", "#10aa35", //9B 10R 11Y 12G
+            "#f8a900", "#0078d7", "#f8a900", "#f8f800", //13O 14B 15O 16Y
+            "#10aa35", "#10aa35", "#0078d7", "#ca83bf", //17G 18G 19B 20I
+            "#f8a900", "#ff0000", "#ff0000", "#ca83bf", //21O 22R 23R 24I
+            "#f8f800", "#831c73", "#f8a900", "#ca83bf" //25Y 26P 27O 28I
         ])
         .width(1200)
         .height(500)
@@ -178,25 +176,24 @@ function makeGraphs(error, donationsJson) {
         .xAxis().ticks(8);
 
     //pie
-    fundingStatusChart //completed, expired, reallocated, live = 4 (lime/ red /yellow/ forestgreen)
-        .ordinalColors(["#00ff00", "#ff0000", "#f8f800", "#10aa35"])
+    fundingStatusChart //completed, expired, live, reallocated= 4 (lime/ red/ forestgreen /yellow)
+        .ordinalColors(["#00ff00", "#ff0000", "#10aa35", "#f8f800"])
         .height(220)
         .radius(90)
-        .innerRadius(40)
         .transitionDuration(1500)
         .dimension(fundingStatusDim)
         .group(numDonationsByFundingStatus)
         .legend(dc.legend());
 
-    gradeLevelChart // 3-5, preK-2, 6-8, 9-12 =4 (orange/ yellow/ dodgerblue/ purple)
+    gradeLevelChart // 3-5, 6-8, 9-12, preK-2,=4 (orange/ yellow/ dodgerblue/ purple)
         .ordinalColors(["#f8a900", "#f8f800", "#0078d7", "#831c73"])
         .height(220)
-        .radius(90)
-        .innerRadius(40)
-        .transitionDuration(1500)
+        .radius(100)
+        .innerRadius(70)
+        .transitionDuration(1200)
         .dimension(gradeLevelDim)
         .group(numDonationsByGradeLevel)
-        .legend(dc.legend());
+        .legend(dc.legend().x(120).y(80));
 
     tfAmericaChart // false, true (red/ lime)
         .ordinalColors(["#ff0000", "#00ff00"])
