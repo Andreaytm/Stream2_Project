@@ -40,7 +40,7 @@ def school_donors():
         # Define wish to access collection: donations
         collection = conn[DBS_NAME][COLLECTION_NAME]
         # Retrieve result set only with fields defined in FIELDS, given count no need to limit results
-        donations = collection.find(projection=FIELDS, limit=25000)
+        donations = collection.find(projection=FIELDS, limit=50000)
         # Convert donations to a list in a JSON object and return JSON data
         return json.dumps(list(donations))
 
