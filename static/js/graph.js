@@ -9,7 +9,7 @@ function makeGraphs(error, donationsJson) {
     }
 
     //Clean donorsdonations data
-    var donorsDonations = donationsJson
+    var donorsDonations = donationsJson;
     var dateFormat= d3.time.format("%d/%m/%Y %H:%M");
     donorsDonations.forEach(function(d) {
         d["date_posted"] = dateFormat.parse(d["date_posted"]);
@@ -180,10 +180,11 @@ function makeGraphs(error, donationsJson) {
         .ordinalColors(["#00ff00", "#ff0000", "#10aa35", "#f8f800"])
         .height(220)
         .radius(90)
-        .innerRadius(70)
         .transitionDuration(1500)
         .dimension(fundingStatusDim)
         .group(numDonationsByFundingStatus)
+        .cx(180)
+        .cy(118)
         .legend(dc.legend());
 
     gradeLevelChart // 3-5, 6-8, 9-12, preK-2,=4 (orange/ yellow/ dodgerblue/ purple)
@@ -194,7 +195,7 @@ function makeGraphs(error, donationsJson) {
         .transitionDuration(1200)
         .dimension(gradeLevelDim)
         .group(numDonationsByGradeLevel)
-        .legend(dc.legend().x(120).y(80));
+        .legend(dc.legend().x(110).y(80));
 
     tfAmericaChart // false, true (red/ lime)
         .ordinalColors(["#ff0000", "#00ff00"])
@@ -204,7 +205,7 @@ function makeGraphs(error, donationsJson) {
         .transitionDuration(1500)
         .dimension(tfAmericaDim)
         .group(numDonationsByTeachForAmerica)
-        .legend(dc.legend());
+        .legend(dc.legend().x(140).y(90));
 
     dc.renderAll();
 }
