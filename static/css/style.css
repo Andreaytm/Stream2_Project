@@ -7,18 +7,20 @@
     vertical-align: middle;
     text-align: center;
     padding-top: 12px;
-    padding-bottom: 0px;
 }
+
 /*Div Chart Titles*/
 .chart-wrapper .chart-title{
     background: #000b64;
     color: white;
 }
+
 /*Navbar Titles*/
 .navbar {
     background: #400743;
     position: fixed;
 }
+
 /*Body*/
 body.application {
     background: #b8c7dd;
@@ -29,19 +31,34 @@ body.application {
     fill: black;
     font-size: 14px;
 }
-/*Pie chart text*/
+
+/*Pie charts*/
 .dc-chart .pie-slice {
     fill: black;
     font-size: 14px;
     font-weight: bold;
     text-transform: capitalize;
 }
+#grade-level-pie.dc-chart .pie-slice {
+    fill: none;
+}
+.dc-chart .selected path{
+    stroke: #fff;
+}
+#funding-status-pie.dc-chart .pie-slice{
+    fill: none;
+}
+#funding-status-pie.dc-chart .dc-legend {
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: bold;
+}
 
 /*Legend Text*/
 .dc-legend {
     text-transform: capitalize;
-
 }
+
 /*total value of donations in USD*/
 #total-donations-nd {
     width: 170px;
@@ -52,8 +69,12 @@ body.application {
     vertical-align: middle;
     text-align: center;
     padding-top: 12px;
-    padding-bottom: 0px;
 }
+
+#metric_1{
+    background: #33CC99;
+}
+
 /*total no donations*/
 #number-donations-nd {
     width: 170px;
@@ -64,11 +85,8 @@ body.application {
     vertical-align: middle;
     text-align: center;
     padding-top: 12px;
-    padding-bottom: 0px;
 }
-#metric_1{
-    background: #33CC99;
-}
+
 #metric_2{
     background: #c7254e;
 }
@@ -85,5 +103,4 @@ body.application {
     vertical-align: middle;
     text-align: center;
     padding-top: 4px;
-    padding-bottom: 0px;
 }
