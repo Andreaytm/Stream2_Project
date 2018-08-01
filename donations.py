@@ -19,6 +19,30 @@ def index():
     return render_template("index.html")
 
 
+@app.route("/about")
+def about():
+    """
+    Flask view for second dashboard page
+    """
+    return render_template("about.html")
+
+
+@app.route("/campaign")
+def campaign():
+    """
+    Flask view for third dashboard page
+    """
+    return render_template("campaign.html")
+
+
+@app.route("/donate")
+def donate():
+    """
+    Flask view for fourth dashboard page
+    """
+    return render_template("donate.html")
+
+
 @app.route("/USdonors/donations")
 def school_donors():
     """
