@@ -2,30 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>School Donations Data</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for ('static', filename = 'lib/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for ('static', filename = 'lib/css/keen-dashboards.css') }}">
     <link rel="stylesheet" href="{{ url_for ('static', filename = 'lib/css/dc.css') }}">
     <link rel="stylesheet" href="{{ url_for ('static', filename = 'css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for ('static', filename = 'lib/css/introjs.css') }}">
+    <link rel="icon" href="static/assets/img/favicon.ico" type="image/x-icon">
+    <title>School Donations Data</title>
 </head>
 <body class="application">
-{% block navbar %}
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="./">School Donations Data</a>
-            <button class="intro_button" type="button" autofocus onclick ="javascript:introJs().start();">Click
-                for a quick tour!</button>
-            <button class="reset_button" type="button" autofocus onclick ="javascript:dc.filterAll();
-            dc.renderAll();">Reset All</button>
+            <a class="navbar-brand" href="./"><i class="glyphicon glyphicon-education"></i> School Donations Data</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myCollapsingList">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+            </button>
         </div>
+			<ul id="myCollapsingList" class="nav navbar-nav collapse navbar-collapse">
+				<li><a href="/about">About DonorsChoose.org</a></li>
+				<li><a href="/campaign">Our Campaign</a></li>
+				<li><a href="/donate">Donate Now</a></li>
+			</ul>
+            <button class="intro_button" type="button" autofocus onclick ="javascript:introJs().start();">
+                <i class="glyphicon glyphicon-send"></i> Click for a quick tour!</button>
+
+            <button class="reset_button" type="button" autofocus onclick ="javascript:dc.filterAll();
+            dc.renderAll();"><i class="glyphicon glyphicon-refresh"></i> Reset All</button>
     </div>
 </div>
-{% endblock %}
+
 <!--insert index.html here-->
 {% block index %}
+{% endblock %}
 
+<!--insert about.html here-->
+{% block about %}
+{% endblock %}
+
+<!--insert campaign.html here-->
+{% block campaign %}
+{% endblock %}
+
+<!--insert donate.html here-->
+{% block donate %}
 {% endblock %}
 
 <hr>
@@ -34,6 +58,7 @@
     <a href="https://github.com/Andreaytm"> Andrea Ma(2018)
     </a>
 </p>
+
 <script src="{{ url_for ('static', filename = 'lib/js/jquery.min.js') }}"></script>
 <script src="{{ url_for ('static', filename = 'lib/js/bootstrap.min.js') }}"></script>
 <script src="{{ url_for ('static', filename = 'lib/js/crossfilter.js') }}"></script>
