@@ -24,33 +24,17 @@
             </button>
         </div>
 			<ul id="myCollapsingList" class="nav navbar-nav collapse navbar-collapse">
-				<li><a href="/about">About DonorsChoose.org</a></li>
+				<li><a href="/about">About</a></li>
 				<li><a href="/campaign">Our Campaign</a></li>
 				<li><a href="/donate">Donate Now</a></li>
 			</ul>
-            <button class="intro_button" type="button" autofocus onclick ="javascript:introJs().start();">
-                <i class="glyphicon glyphicon-send"></i> Click for a quick tour!</button>
-
-            <button class="reset_button" type="button" autofocus onclick ="javascript:dc.filterAll();
+        <button class="intro_button" type="button" autofocus onclick ="javascript:introJs().start();">
+            <i class="glyphicon glyphicon-send"></i> Click for a quick tour!</button>
+        <button class="reset_button" type="button" autofocus onclick ="javascript:dc.filterAll();
             dc.renderAll();"><i class="glyphicon glyphicon-refresh"></i> Reset All</button>
     </div>
 </div>
-
-<!--insert index.html here-->
-{% block index %}
-{% endblock %}
-
-<!--insert about.html here-->
-{% block about %}
-{% endblock %}
-
-<!--insert campaign.html here-->
-{% block campaign %}
-{% endblock %}
-
-<!--insert donate.html here-->
-{% block donate %}
-{% endblock %}
+{% block content %}{% endblock %}
 
 <hr>
 <p class="small text-muted">
