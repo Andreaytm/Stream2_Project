@@ -10,43 +10,43 @@ function makeGraphs(error, donationsJson) {
 
     //Clean donorsdonations data
     var donorsDonations = donationsJson;
-    var dateFormat= d3.time.format("%d/%m/%Y %H:%M");
-    donorsDonations.forEach(function(d) {
+    var dateFormat = d3.time.format("%d/%m/%Y %H:%M");
+    donorsDonations.forEach(function (d) {
         d["date_posted"] = dateFormat.parse(d["date_posted"]);
         d["date_posted"].setDate(1);
         d["total_donations"] = +d["total_donations"];
+        d.Year = d.date_posted.getFullYear();
     });
-
 
     //Create a Crossfilter instance
     var ndx = crossfilter(donorsDonations);
 
     //Define Dimensions
-    var dateDim = ndx.dimension(function(d) {
+    var dateDim = ndx.dimension(function (d) {
         return d["date_posted"];
     });
-    var resourceTypeDim = ndx.dimension(function(d) {
+    var resourceTypeDim = ndx.dimension(function (d) {
         return d["resource_type"];
     });
-    var povertyLevelDim = ndx.dimension(function(d) {
+    var povertyLevelDim = ndx.dimension(function (d) {
         return d["poverty_level"];
     });
-    var fundingStatusDim = ndx.dimension(function(d) {
+    var fundingStatusDim = ndx.dimension(function (d) {
         return d["funding_status"];
     });
-    var stateDim = ndx.dimension(function(d) {
+    var stateDim = ndx.dimension(function (d) {
         return d["school_state"];
     });
-    var pfAreaDim = ndx.dimension(function(d) {
+    var pfAreaDim = ndx.dimension(function (d) {
         return d["primary_focus_area"];
     });
-    var pfSubjectDim = ndx.dimension(function(d) {
+    var pfSubjectDim = ndx.dimension(function (d) {
         return d["primary_focus_subject"];
     });
-    var gradeLevelDim = ndx.dimension(function(d) {
+    var gradeLevelDim = ndx.dimension(function (d) {
         return d["grade_level"];
     });
-    var tfAmericaDim = ndx.dimension(function(d) {
+    var tfAmericaDim = ndx.dimension(function (d) {
         return d["teacher_teach_for_america"];
     });
 
@@ -59,13 +59,11 @@ function makeGraphs(error, donationsJson) {
     var numDonationsByPrimaryFocusSubject = pfSubjectDim.group();
     var numDonationsByGradeLevel = gradeLevelDim.group();
     var numDonationsByTeachForAmerica = tfAmericaDim.group();
-    var totalDonationsByState = stateDim.group().reduceSum(function(d) {
-        return d["total_donations"];
-    });
+
     var stateGroup = stateDim.group();
 
     var all = ndx.groupAll();
-    var totalDonations = ndx.groupAll().reduceSum(function(d) {
+    var totalDonations = ndx.groupAll().reduceSum(function (d) {
         return d["total_donations"];
     });
 
@@ -76,7 +74,6 @@ function makeGraphs(error, donationsJson) {
     // Charts
     //Line charts
     var timeChart = dc.lineChart("#time-chart");
-
     //Select menu
     var selectField = dc.selectMenu("#menu-select");
 
@@ -94,6 +91,10 @@ function makeGraphs(error, donationsJson) {
     var fundingStatusChart = dc.pieChart("#funding-status-pie");
     var gradeLevelChart = dc.pieChart("#grade-level-pie");
     var tfAmericaChart = dc.pieChart("#tf-america-pie");
+
+    //data Table
+    datatable = dc.dataTable("#data-table");
+    datacount = dc.numberDisplay("#data-count");
 
     //Configure chart parameters
     //line
@@ -147,7 +148,9 @@ function makeGraphs(error, donationsJson) {
         .height(250)
         .dimension(povertyLevelDim)
         .group(numDonationsByPovertyLevel)
-        .ordering(function (d) { return -d.value }) //reordered so poverty with largest count is at top of chart.
+        .ordering(function (d) {
+            return -d.value
+        }) //reordered so poverty with largest count is at top of chart.
         .xAxis().ticks(6);
 
     pfAreaChart /// R =applied learning,  O=health & sports, Y=history & civics, G =literacy & language,
@@ -175,6 +178,48 @@ function makeGraphs(error, donationsJson) {
         .group(numDonationsByPrimaryFocusSubject)
         .xAxis().ticks(8);
 
+    // Setup the charts
+
+    datatable
+        .dimension(dateDim)
+        .group(function(d) { return d.Year; })
+        .turnOnControls(true)
+        .size(Infinity)
+        .columns([
+            function (d) {
+                return d.date_posted.getMonth()+1
+                    + "-" + d.date_posted.getFullYear();
+            },
+            function (d) {
+                return "$" + d.total_donations
+            },
+            function (d) {
+                return d.num_donors
+            },
+            function (d) {
+                return d.resource_type
+            },
+            function (d) {
+                return d.school_state
+            },
+            function (d) {
+                return d.school_county
+            },
+            function (d) {
+                return d.students_reached
+            },
+            function (d) {
+                return d.funding_status
+            }
+        ])
+        .order(d3.ascending);
+
+    datacount
+        .formatNumber(d3.format("d"))
+        .valueAccessor(function (d) {
+            return d;
+        })
+        .group(all);
     //pie
     fundingStatusChart //completed, expired, live, reallocated= 4 (lime/ red/ forestgreen /yellow)
         .ordinalColors(["#00ff00", "#ff0000", "#10aa35", "#f8f800"])
@@ -205,7 +250,34 @@ function makeGraphs(error, donationsJson) {
         .transitionDuration(1500)
         .dimension(tfAmericaDim)
         .group(numDonationsByTeachForAmerica)
-        .legend(dc.legend().x(140).y(90));
+        .legend(dc.legend().x(145).y(95));
 
+    update();
     dc.renderAll();
+}
+var ofs = 0, pag = 10; //taken and adapted from https://dc-js.github.io/dc.js/docs/html/dc.dataTable.html
+function display() {
+    d3.select('#start')
+        .text(ofs+1);
+    d3.select('#end')
+        .text(ofs+pag);
+    d3.select('#prev')
+        .attr('disabled', ofs-pag<0 ? 'true' : null);
+    d3.select('#next')
+        .attr('disabled', ofs+pag>=parseInt($("#data-count").text()) ? 'true' : null);
+ }
+function update() {
+    datatable.beginSlice(ofs);
+    datatable.endSlice(ofs+pag);
+    display();
+}
+function prev() {
+    ofs -= pag;
+    update();
+    datatable.redraw();
+}
+function next() {
+    ofs += pag;
+    update();
+    datatable.redraw();
 }

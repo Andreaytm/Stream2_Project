@@ -20,6 +20,7 @@
     background: #400743;
     position: fixed;
 }
+
 button{
     background-color: #ffffff;
     color: #400743;
@@ -110,4 +111,7 @@ body.application {
     vertical-align: middle;
     text-align: center;
     padding-top: 4px;
+}
+.dc-table-group {
+    visibility: collapse;
 }
