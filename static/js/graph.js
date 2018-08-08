@@ -101,7 +101,7 @@ function makeGraphs(error, donationsJson) {
     //line
     timeChart
         .ordinalColors(["#0078d7"])
-        .width(1200)
+        .width(1300)
         .height(300)
         .margins({top: 30, right: 50, bottom: 30, left: 50})
         .dimension(dateDim)
