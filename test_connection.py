@@ -15,6 +15,7 @@ db = conn['USschooldonors']
 print db  # Database (MongoClient('localhost' 27017), u'schooldonors')
 
 # Note test 1 is successful printed: Mongo is connected!
+# local connection to Mongo DB is made
 
 coll = db.donations
 print db.collection_names()  # [u'donations']
@@ -199,7 +200,7 @@ MN count
 AZ count *remove*
 13573
 ----------------------------------
-KY count  (Chosen project state)
+KY count  
 6324
 ----------------------------------
 UT count *remove*
@@ -229,10 +230,10 @@ WI count *remove*
 HI count
 3921
 ----------------------------------
-NH count
+NH count *remove*
 2068
 ----------------------------------
-MI count
+MI count *remove*
 1343
 ----------------------------------
 AR count *remove*
@@ -243,41 +244,16 @@ AK count
 ----------------------------------
 Collection: Donations count
 386455
+
+Above count based on initial database before reduction of data via removal of school_states
 """
 
 # Removed more data to limit upload speed via mongo
-# Selection of school_states to be removed based on count similar to KY
+# Selection of school_states to be removed based on count similar to DE
 
 """
-New collection includes following states = KS, MN, KY*, ID, HI, NH, MT, AK (* = project school_state)
-Kept states similar to school_state = KY for comparative purposes.
-----------------------------------
-KS count
-3470
-----------------------------------
-MN count
-5454
-----------------------------------
-KY count
-5565
-----------------------------------
-ID count
-2849
-----------------------------------
-HI count
-3508
-----------------------------------
-NH count
-1813
-----------------------------------
-MI count
-1194
-----------------------------------
-AK count
-1843
-----------------------------------
-Collection: Donations count
-25696
+New collection includes following states = KS, MN, KY, ID, HI, DE*, AK (* = project school_state)
+Kept random number states for comparative purposes.
 """
 print "----------------------------------"
 
