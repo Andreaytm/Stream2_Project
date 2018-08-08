@@ -112,6 +112,16 @@ body.application {
     text-align: center;
     padding-top: 4px;
 }
+
+/*styling for table*/
 .dc-table-group {
     visibility: collapse;
+}
+
+thead {
+    background-color: #b8c7dd;
+}
+
+table tr:nth-child(even) {
+    background-color: #d1e2f8;
 }

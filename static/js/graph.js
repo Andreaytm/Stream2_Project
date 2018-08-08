@@ -11,6 +11,7 @@ function makeGraphs(error, donationsJson) {
     //Clean donorsdonations data
     var donorsDonations = donationsJson;
     var dateFormat = d3.time.format("%d/%m/%Y %H:%M");
+    console.log(dateFormat); //returned %d/%m/%Y %H:%M
     donorsDonations.forEach(function (d) {
         d["date_posted"] = dateFormat.parse(d["date_posted"]);
         d["date_posted"].setDate(1);
@@ -255,6 +256,8 @@ function makeGraphs(error, donationsJson) {
     update();
     dc.renderAll();
 }
+console.log(typeof "#data-count"); //test confirmed #data-count is a string
+
 var ofs = 0, pag = 10; //taken and adapted from https://dc-js.github.io/dc.js/docs/html/dc.dataTable.html
 function display() {
     d3.select('#start')
@@ -264,7 +267,8 @@ function display() {
     d3.select('#prev')
         .attr('disabled', ofs-pag<0 ? 'true' : null);
     d3.select('#next')
-        .attr('disabled', ofs+pag>=parseInt($("#data-count").text()) ? 'true' : null);
+        .attr('disabled', ofs+pag>=parseInt($("#data-count", 10).text()) ? 'true' : null);
+    //use jQuery to convert string: #data-count to Integer. Added default radix of 10
  }
 function update() {
     datatable.beginSlice(ofs);
