@@ -167,36 +167,40 @@
             </div>
         </div>
         <!--End Primary Focus Subjects Bar Chart-->
-        <!-- Data table Chart -->
+           <!-- Data table Chart -->
         <div class ="col-sm-12">
              <div class="chart-wrapper">
                   <div class="chart-title" data-step="12"
-                       data-intro="blabla bla"
+                       data-intro="This table provides information on donations made to the 7 school states,
+                       the value of donations, number of donors, the resource type bought, the county, city and
+                       students reached as a result and the current status of the funding, whether it is live, expired,
+                       completed or reallocated. Please use the Prev and Next buttons to look through the pages of data"
                        style="font-weight: normal" data-position="top">
                       Table Donations
                   </div>
-            <table id="data-table" class="table table-hover dc-data-table dc-chart scrollY">
-                <thead>
-                <tr class='header'>
-                    <th>Date</th>
-                    <th>$ Donations</th>
-                    <th>No of Donors</th>
-                    <th>Resource Type</th>
-                    <th>City</th>
-                    <th>County</th>
-                    <th>Students Reached</th>
-                    <th>Funding Status</th>
-                </tr>
-                </thead>
-            </table>
+                 <table id="data-table" class="table table-hover dc-data-table dc-chart">
+                     <thead>
+                     <tr class='header'>
+                         <th>Date</th>
+                         <th>$ Donations</th>
+                         <th>No of Donors</th>
+                         <th>Resource Type</th>
+                         <th>City</th>
+                         <th>County</th>
+                         <th>Students Reached</th>
+                         <th>Funding Status</th>
+                     </tr>
+                     </thead>
+                 </table>
                  <div id="paging">
-                     <input id="prev" class="btn" type="button" value="Prev" onclick="javascript:prev()"/>
+                     <input id="prev" class="btn" type="button" value="<< Prev" onclick="javascript:prev()"/>
                      Showing <span id="start"></span>-<span id="end"></span> of <span id="data-count"></span>
-                     <input id="next" class="btn" type="button" value="Next" onclick="javascript:next()"/>
+                     <input id="next" class="btn" type="button" value="Next >>" onclick="javascript:next()"/>
                  </div>
              </div>
         </div>
         <!-- End Data table Chart -->
+
     </div>
 </div>
 
