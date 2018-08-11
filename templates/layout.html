@@ -30,6 +30,8 @@
 			</ul>
     </div>
 </div>
+<button onclick="GoToTop()" id="toTop" title="Go to top"><span class="glyphicon glyphicon-chevron-up"></span></button>
+
 {% block content %}{% endblock %}
 
 <hr>
@@ -47,6 +49,7 @@
 <script src="{{ url_for ('static', filename = 'lib/js/queue.js') }}"></script>
 <script src="{{ url_for ('static', filename = 'lib/js/keen.min.js') }}"></script>
 <script src="{{ url_for ('static', filename = 'js/graph.js') }}"></script>
+<script src="{{ url_for ('static', filename = 'js/scrollbutton.js') }}" type = "text/javascript"></script>
 <script src="{{ url_for ('static', filename = 'lib/js/intro.js') }}" type = "text/javascript"></script>
 <script src="{{ url_for ('static', filename = 'lib/js/data-table.js') }}" type = "text/javascript"></script>
 
