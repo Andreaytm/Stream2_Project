@@ -1,9 +1,16 @@
 {% extends "layout.html" %}
 {% block content %}
-<div id="outer" class="container-fluid">
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="row">
+<div id="index" class="container-fluid">
+    <div class="col-sm-12">
+        <div class="row">
+            <!--intro here -->
+            <h2>School Donations Dashboard</h2>
+            <button class="intro_button" type="button" autofocus onclick ="introJs().start();">
+            <i class="glyphicon glyphicon-send"></i> Click for a quick tour!</button>
+            <button class="reset_button" type="button" autofocus onclick ="dc.filterAll();
+            dc.renderAll();"><i class="glyphicon glyphicon-refresh"></i> Reset All</button>
+            <!--end intro-->
+            <hr>
                 <!--Start Chart Select State (Menu Select)-->
                 <div class="col-sm-2">
                     <div class="chart-wrapper"><!--// ["AK", "DE", "HI", "ID", "MN", "KS", "KY" ]=7-->
@@ -200,7 +207,6 @@
              </div>
         </div>
         <!-- End Data table Chart -->
-
     </div>
 </div>
 
