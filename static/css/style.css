@@ -125,3 +125,11 @@ thead {
 table tr:nth-child(even) {
     background-color: #d1e2f8;
 }
+
+/*about*/
+#carousel{
+	margin: 0 auto;
+	width: 80%;
+	max-height: 600px;
+	overflow: hidden;
+}
