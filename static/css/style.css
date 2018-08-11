@@ -133,3 +133,11 @@ table tr:nth-child(even) {
 	max-height: 600px;
 	overflow: hidden;
 }
+div h2{
+    display: inline-block;
+}
+div button {
+    display: inline-block;
+    float: right;
+    align-content: center;
+}
