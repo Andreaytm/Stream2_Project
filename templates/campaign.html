@@ -1,6 +1,31 @@
 {% extends "layout.html" %}
-
 {% block content %}
-    <h1>Campaign</h1>
+    <div id="campaign" class="container-fluid">
+        <div class="row">
+            <h1> Our Campaign</h1>
+            <div class="col-sm-12" id="impact">
+                <img id="stationery" src="{{ url_for ('static', filename = 'assets/img/stationery.jpeg') }}">
+                <h2>Our Impact</h2>
+                <p class="quote">
+                    The funding provided to DonorsChoose is used to support teachers and students.
+                    From resources such as pens, books, money for school trips, printers, computers and much more.
+                    The money donated not only provides resources but also confidence self worth and pride.
+                    It is an investment in our future and in our kids lives.
 
+                </p>
+            </div>
+            <hr>
+            <div class="col-sm-12" id="aim">
+                    <img id="classroom" src="{{ url_for ('static', filename = 'assets/img/classroom.jpg') }}">
+                <h2>Our Aim</h2>
+                <br>
+                <p class="quote">
+                    DonorsChoose has supported a lot of schools in various US states.
+                    Our aim is to increase our reach, so that no student and teacher is disadvantaged from their
+                    location. We hope to have equal education for everyone. That each student and teacher is
+                    provided with what they need to study, to learn and to teach.
+                </p>
+            </div>
+        </div>
+    </div>
 {% endblock %}
