@@ -1,15 +1,8 @@
+/*MAIN*/
 /*Navbar Titles*/
 .navbar {
     background: #400743;
     position: fixed;
-}
-
-button{
-    background-color: #ffffff;
-    color: #400743;
-    border-radius: 10px;
-    margin: 10px;
-    font-weight: bold;
 }
 
 /*Body*/
@@ -32,13 +25,36 @@ body.application {
 	border-radius: 20px;
     z-index: 1;
 }
-
 #toTop:hover{
 	background-color: navy;
 }
 
-/*DASHBOARD*/
-/* Chart text for graphs*/
+/*links*/
+.link{
+    color: #400743;
+}
+
+/*DASHBOARD-INDEX*/
+/*intro reset buttons*/
+button{
+    background-color: #ffffff;
+    color: #400743;
+    border-radius: 10px;
+    margin: 10px;
+    font-weight: bold;
+}
+#index h2{
+    display: inline-block;
+    padding-left: 20px;
+}
+div button {
+    display: inline-block;
+    float: right;
+    align-content: center;
+}
+
+/*TEXT*/
+/*Chart text for graphs*/
 .chart-stage {
     background: white;
     position: relative;
@@ -55,12 +71,18 @@ body.application {
     color: white;
 }
 
-/* Row chart text*/
+/*Legend Text*/
+.dc-legend {
+    text-transform: capitalize;
+}
+
+/*Row chart text*/
 .dc-chart g.row text {
     fill: black;
     font-size: 14px;
 }
 
+/*CHARTS*/
 /*Pie charts*/
 .dc-chart .pie-slice {
     fill: black;
@@ -83,11 +105,6 @@ body.application {
     font-weight: bold;
 }
 
-/*Legend Text*/
-.dc-legend {
-    text-transform: capitalize;
-}
-
 /*total value of donations in USD*/
 #total-donations-nd {
     width: 170px;
@@ -99,7 +116,6 @@ body.application {
     text-align: center;
     padding-top: 12px;
 }
-
 #metric_1{
     background: #33CC99;
 }
@@ -115,7 +131,6 @@ body.application {
     text-align: center;
     padding-top: 12px;
 }
-
 #metric_2{
     background: #c7254e;
 }
@@ -134,28 +149,34 @@ body.application {
     padding-top: 4px;
 }
 
+/*TABLE*/
 /*styling for table*/
 .dc-table-group {
     visibility: collapse;
 }
-
 thead {
     background-color: #b8c7dd;
 }
-
+table th{
+        text-align: center;
+}
 table tr:nth-child(even) {
     background-color: #d1e2f8;
 }
-/*Tour & Reset buttons*/
-
-div h2{
-    display: inline-block;
-    padding-left: 20px;
+table{
+    text-align: center;
 }
-div button {
-    display: inline-block;
-    float: right;
-    align-content: center;
+.btn{
+    background-color: #ffffff;
+    color: #400743;
+    border-radius: 10px;
+    margin: 10px;
+    font-weight: bold;
+    border-style: outset;
+}
+#paging{
+    color: #400743;
+    font-weight: bold;
 }
 
 /*ABOUT*/
@@ -170,5 +191,60 @@ div button {
     padding-left: 20px;
 }
 h1{
+    padding-left: 20px;
+}
+.quote{
+    font-style: italic;
+    font-size: 20px;
+    color: #546167;
+}
+#about-graphs{
+    padding-left: 40px;
+}
+
+#about-dashboard{
+    padding-left: 40px;
+}
+
+/*CAMPAIGN*/
+#classroom{
+    border-radius: 60px;
+    float: left;
+    padding: 30px;
+    width: 450px;
+    height: 300px;
+}
+#stationery{
+    border-radius: 60px;
+    float: right;
+    padding: 30px;
+    width: 450px;
+    height: 300px;
+}
+#campaign h2{
+    display: inline-block;
+    padding-left: 20px;
+}
+#impact p{
+    padding-left: 40px;
+}
+#aim p{
+    padding-left: 500px;
+    padding-right: 20px;
+}
+
+/*DONATE*/
+div a.button{
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #400743;
+    margin: 10px;
+    font-weight: bold;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-style: outset;
+}
+#donate h2{
+    display: inline-block;
     padding-left: 20px;
 }
