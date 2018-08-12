@@ -101,7 +101,7 @@ function makeGraphs(error, donationsJson) {
     //line
     timeChart
         .ordinalColors(["#0078d7"])
-        .width(1300)
+        .width(1000)
         .height(300)
         .margins({top: 30, right: 50, bottom: 30, left: 50})
         .dimension(dateDim)
@@ -141,7 +141,7 @@ function makeGraphs(error, donationsJson) {
         .height(250)
         .dimension(resourceTypeDim)
         .group(numDonationsByResourceType)
-        .xAxis().ticks(6);
+        .xAxis().ticks(5);
 
     povertyLevelChart // highest, high, moderate, low =4 [royg]
         .ordinalColors(["#ff0000", "#f8a900", "#f8f800", "#00ff00"])
@@ -152,7 +152,7 @@ function makeGraphs(error, donationsJson) {
         .ordering(function (d) {
             return -d.value
         }) //reordered so poverty with largest count is at top of chart.
-        .xAxis().ticks(6);
+        .xAxis().ticks(5);
 
     pfAreaChart /// R =applied learning,  O=health & sports, Y=history & civics, G =literacy & language,
     // B =math & science, I =music & arts, P= special needs =7
@@ -161,7 +161,7 @@ function makeGraphs(error, donationsJson) {
         .height(250)
         .dimension(pfAreaDim)
         .group(numDonationsByPrimaryFocusArea)
-        .xAxis().ticks(6);
+        .xAxis().ticks(4);
 
     pfSubjectChart  //28
         .ordinalColors([
@@ -173,11 +173,11 @@ function makeGraphs(error, donationsJson) {
             "#f8a900", "#ff0000", "#ff0000", "#ca83bf", //21O 22R 23R 24I
             "#f8f800", "#831c73", "#f8a900", "#ca83bf" //25Y 26P 27O 28I
         ])
-        .width(1200)
+        .width(1000)
         .height(500)
         .dimension(pfSubjectDim)
         .group(numDonationsByPrimaryFocusSubject)
-        .xAxis().ticks(8);
+        .xAxis().ticks(5);
 
     // Setup the charts
 
@@ -224,34 +224,34 @@ function makeGraphs(error, donationsJson) {
     //pie
     fundingStatusChart //completed, expired, live, reallocated= 4 (lime/ red/ forestgreen /yellow)
         .ordinalColors(["#00ff00", "#ff0000", "#10aa35", "#f8f800"])
-        .height(220)
+        .height(250)
         .radius(90)
         .transitionDuration(1500)
         .dimension(fundingStatusDim)
         .group(numDonationsByFundingStatus)
-        .cx(180)
-        .cy(118)
+        .cx(170)
+        .cy(140)
         .legend(dc.legend());
 
     gradeLevelChart // 3-5, 6-8, 9-12, preK-2,=4 (orange/ yellow/ dodgerblue/ purple)
         .ordinalColors(["#f8a900", "#f8f800", "#0078d7", "#831c73"])
-        .height(220)
+        .height(250)
         .radius(100)
         .innerRadius(70)
         .transitionDuration(1200)
         .dimension(gradeLevelDim)
         .group(numDonationsByGradeLevel)
-        .legend(dc.legend().x(110).y(80));
+        .legend(dc.legend().x(110).y(90));
 
     tfAmericaChart // false, true (red/ lime)
         .ordinalColors(["#ff0000", "#00ff00"])
-        .height(220)
+        .height(250)
         .radius(90)
         .innerRadius(40)
         .transitionDuration(1500)
         .dimension(tfAmericaDim)
         .group(numDonationsByTeachForAmerica)
-        .legend(dc.legend().x(145).y(95));
+        .legend(dc.legend().x(145).y(105));
 
     update();
     dc.renderAll();
