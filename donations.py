@@ -2,12 +2,12 @@ from flask import Flask
 from flask import render_template
 from pymongo import MongoClient
 import json
+import os
 
 app = Flask(__name__)
 
-MONGODB_HOST = 'localhost'
-MONGODB_PORT = 27017
-DBS_NAME = 'USschooldonors'
+MONGO_URI = os.getenv('MONGODB_URI', 'mongodb://localhost:27017')
+DBS_NAME = os.getenv('MONGO_DB_NAME', 'USschooldonors')
 COLLECTION_NAME = 'donations'
 
 
@@ -60,7 +60,7 @@ def school_donors():
 
     # Open a connection to MongoDB using a 'with' statement such that the
     # connection will close as soon as exit the 'with' statement
-    with MongoClient(MONGODB_HOST, MONGODB_PORT) as conn:
+    with MongoClient(MONGO_URI) as conn:
         # Define wish to access collection: donations
         collection = conn[DBS_NAME][COLLECTION_NAME]
         # Retrieve result set only with fields defined in FIELDS, given count no need to limit results
