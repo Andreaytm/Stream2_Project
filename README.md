@@ -16,11 +16,11 @@ connect the user with the charity.
 	- About
 	- Our Campaign
 	- Donate
-	- *404 Error page (extra) - TBC*
 
 - User Based Features 
-    - Graphs,Charts and tables (statistical data) 
+    - Graphs,Charts and Tables (statistical data) 
 	- Gallery (Rotational Carousel)
+	- Introduction Tooltips Tour
 
 ## Development 
 
@@ -34,28 +34,28 @@ connect the user with the charity.
 
 - Testing
     - Validation of syntax through [CSS](http://jigsaw.w3.org/css-validator) and [HTML](https://validator.w3.org) 
-	Validators, JavaScript code on [JSHint](jshint.com) and syntax on Python through [LOOK UP THIS](hyperlink)+
-	- Used ```CTRL+SHIFT+P``` to reindent tabs to ensure CSS and HTML code is structured cleanly.
-	- Checked console for errors in JavaScript and used console.log to print out content for resolution of issues.
+	Validators, JavaScript code on [JSHint](jshint.com) and syntax on Python through [pep8](http://pep8online.com) tool,
+	reading exception messages and using the inbuilt debugger in PyCharm.
+	- Checked console for errors in JavaScript and used ```console.log``` to print out content for resolution of issues.
+	- Used in built auto-indent lines function in PyCharm to ensure code has no logic bugs.
 	- Used issue tracker on Github and branches for version control.
 	- Installed various browsers: Opera, IE, Edge, Firefox, Chrome for testing for cross-compatibility in various 
-	platforms and devices: Android, Apple ipad and iphone.
+	platforms.
+	- Tested css options and various device sizes: Android, Apple iPad and iPhone, online using Developer Tools.
 
 - Implementation
-	- For mobile responsiveness and font and image-sizing I referred to best practice discussed on StackOverflow 
-	and ensured font-size was 16px = 1em. Initially I had thought of keeping this font for all devices however have 
-	decided to alter font sizes for each device upon reflection. I have also included a line-height of 1.25em for easy 
-	legibility of paragraphs on mobile devices.
-
-- Implementation
-    -TBC
+	- For mobile responsiveness I used Bootstrap grid system to easily manipulate the display of graphs per device used.
+	- Minor stylistic aspects have been included in the design
+	    - [Font Awesome](https://fontawesome.bootstrapcheatsheets.com) glyphicons
+	    - Images were taken from free stockphoto website [Pexels](https://pexels.com)
     
 - Challenges
-    -TBC
+    - Minor issue with reading line graph initially due to issue with format of date. This was resolved by a simple
+    ```console.log``` call which displayed the format of the date: %d/%m/%Y %H:%M instead of the initial call within the 
+    school_donations project which uses the same dataset but has a date format of 
     
 - Finalisation
-    -TBC
-    - The project is deployed on Heroku and accessible through [insert link here](and url hyperlink here).
+    - The project is deployed on Heroku and accessible through [insert link here](and url hyperlink here). TBC
 
 - Reflections 
     - In future I need to keep in mind that *less is more*. My initial concept was too complex and *seemed to grow arms 
@@ -75,7 +75,7 @@ connect the user with the charity.
     to our web based interface.
     - [Gunicorn](http://gunicorn.org): A Python package, used for running HTTP servers on UNIX based operating systems.
     - [Heroku](https://www.heroku.com) and [mLab](https://mlab.com) for deployment.
-    - [Intro.js](https://introjs.com) & Introjs.css providing pop-up tooltip tour of the dashboard.
+    - [Intro.js](https://introjs.com) and Introjs.css providing pop-up tooltip tour of the dashboard.
     - [Keen.js](https://github.com/keen/keen-js): A dashboard template library. Used in conjunction with bootstrap to 
     layout dashboard elements.
     - [Mongo DB](https://www.mongodb.com): NoSQL Database used to convert and present our data in JSON format.
@@ -88,7 +88,6 @@ connect the user with the charity.
 - [jQuery](https://www.jQuery.com) to manage events and effects for enhanced user experience.
 - [Pencil](https://www.pencil.evolus.vn) for creation of wireframes.
 - [PyCharm](https://www.jetbrains.com/pycharm) for full-stack web development.
-- [Pexels](https://www.pexels.com) for free photos. Special mention to Pixabay and Nappy.
 
 
 ## Acknowledgements/ Copyright
@@ -97,8 +96,11 @@ for support for templating.
 - [Data-table.js](https://dc-js.github.io/dc.js/docs/html/data-table.js.html) for data-table usage and pagination. 
 - [DonorsChoose](https://www.donorschoose.org) and CodeInstitute for the data.
 - Glyphicons from [Font Awesome](https://fontawesome.bootstrapcheatsheets.com)
+- [Pexels](https://www.pexels.com) for free photos. Special mention to Pixabay and Nappy.
+- Scrollbutton adapted from [w3schools.com](www.w3schools.com).
 
 ## Special Thanks and Mentions to...
 - My tutor Mohamed Melouk @mmelouk.
 
 ## Getting the Code up and Running
+ -TBC

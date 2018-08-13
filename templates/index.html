@@ -1,209 +1,210 @@
 {% extends "layout.html" %}
+{% block title %}School Donations Data{% endblock %}
 {% block content %}
-<div id="index" class="container-fluid">
-    <div class="row">
-        <div class="col-sm-12">
-            <!--intro here -->
-            <h2>School Donations Dashboard</h2>
-            <button class="intro_button" type="button" autofocus onclick ="introJs().start();">
-            <i class="glyphicon glyphicon-send"></i> Click for a quick tour!</button>
-            <button class="reset_button" type="button" autofocus onclick ="dc.filterAll();
+    <div id="index" class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <!--intro here -->
+                <h2>School Donations Dashboard</h2>
+                <button class="intro_button" type="button" autofocus onclick ="introJs().start();">
+                    <i class="glyphicon glyphicon-send"></i> Click for a quick tour!</button>
+                <button class="reset_button" type="button" autofocus onclick ="dc.filterAll();
             dc.renderAll();"><i class="glyphicon glyphicon-refresh"></i> Reset All</button>
-            <!--end intro-->
-            <hr>
-            <!--Start Chart Select State (Menu Select)-->
-            <div class="col-lg-2 col-md-4">
-                <div class="chart-wrapper"><!--// ["AK", "DE", "HI", "ID", "MN", "KS", "KY" ]=7-->
-                    <div class="chart-title" data-step="1" data-intro="Use the drop-down menu to see statistics for
+                <!--end intro-->
+                <hr>
+                <!--Start Chart Select State (Menu Select)-->
+                <div class="col-lg-2 col-md-4">
+                    <div class="chart-wrapper"><!--// ["AK", "DE", "HI", "ID", "MN", "KS", "KY" ]=7-->
+                        <div class="chart-title" data-step="1" data-intro="Use the drop-down menu to see statistics for
                     donations given per school state. Six states were chosen at random to provide a snapshot of the
                     impact of DonorsChoose donations and the current education improvements made within each of these US
                     States. These include: Alaska (AK), Delaware (DE), Hawaii (HI), Idaho (ID), Kansas (KS)
                     and Kentucky (KY)." style="font-weight: normal" data-position="right">
-                    Donation State
-                    </div>
-                    <div class="chart-stage">
-                        <div id="menu-select"></div>
+                            Donation State
+                        </div>
+                        <div class="chart-stage">
+                            <div id="menu-select"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!--End Chart Select State (Menu Select)-->
-            <!--Start Chart Total No Donations Metric 1-->
-            <div class="col-lg-2 col-md-4">
-                <div class="chart-wrapper">
-                    <div class="chart-title" data-step="2" data-intro="This number shows the total number of
+                <!--End Chart Select State (Menu Select)-->
+                <!--Start Chart Total No Donations Metric 1-->
+                <div class="col-lg-2 col-md-4">
+                    <div class="chart-wrapper">
+                        <div class="chart-title" data-step="2" data-intro="This number shows the total number of
                     donations given for the selected school state."
-                    style="font-weight: normal" data-position="right">
-                    Total Number of Donations
-                    </div>
-                    <div class="chart-stage" id="metric_1">
-                        <div id="number-donations-nd"></div>
-                    </div>
-                </div>
-            </div>
-            <!--End Chart Total No Donations Metric 1-->
-            <!--Start Chart Total Donations USD Metric 2-->
-            <div class="col-lg-2 col-md-4">
-                <div class="chart-wrapper">
-                    <div class="chart-title" data-step="3"
-                         data-intro="This number shows the total value of donations given in US Dollars."
-                         style="font-weight: normal" data-position="right">
-                        Total Donations in USD
-                    </div>
-                    <div class="chart-stage" id="metric_2">
-                        <div id="total-donations-nd"></div>
+                             style="font-weight: normal" data-position="right">
+                            Total Number of Donations
+                        </div>
+                        <div class="chart-stage" id="metric_1">
+                            <div id="number-donations-nd"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!--End Chart Total Donations USD Metric 2-->
-            <!--Start Chart Chart Poverty Level (Row)-->
-            <div class="col-lg-3 col-md-6">
-                <div class="chart-wrapper">
-                    <div class="chart-title" data-step="4"
-                         data-intro="This bar graph shows the poverty levels for state areas.
+                <!--End Chart Total No Donations Metric 1-->
+                <!--Start Chart Total Donations USD Metric 2-->
+                <div class="col-lg-2 col-md-4">
+                    <div class="chart-wrapper">
+                        <div class="chart-title" data-step="3"
+                             data-intro="This number shows the total value of donations given in US Dollars."
+                             style="font-weight: normal" data-position="right">
+                            Total Donations in USD
+                        </div>
+                        <div class="chart-stage" id="metric_2">
+                            <div id="total-donations-nd"></div>
+                        </div>
+                    </div>
+                </div>
+                <!--End Chart Total Donations USD Metric 2-->
+                <!--Start Chart Chart Poverty Level (Row)-->
+                <div class="col-lg-3 col-md-6">
+                    <div class="chart-wrapper">
+                        <div class="chart-title" data-step="4"
+                             data-intro="This bar graph shows the poverty levels for state areas.
                          The graph is displayed in terms of highest prevalent poverty from the top."
-                         style="font-weight: normal" data-position="left">
-                        Poverty level
-                    </div>
-                    <div class="chart-stage">
-                        <div id="poverty-level-rc"></div>
+                             style="font-weight: normal" data-position="left">
+                            Poverty level
+                        </div>
+                        <div class="chart-stage">
+                            <div id="poverty-level-rc"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!--End Chart Poverty Level(Row)-->
-            <!--Start Chart Funding Status Pie-->
-            <div class="col-lg-3 col-md-6">
-                <div class="chart-wrapper">
-                    <div class="chart-title" data-step="5"
-                         data-intro="This pie chart shows the funding status in each selected state.
+                <!--End Chart Poverty Level(Row)-->
+                <!--Start Chart Funding Status Pie-->
+                <div class="col-lg-3 col-md-6">
+                    <div class="chart-wrapper">
+                        <div class="chart-title" data-step="5"
+                             data-intro="This pie chart shows the funding status in each selected state.
                          Completed means that the funding has been given to the school.
                          Expired means that the funding allocated is no longer available.
                          Reallocated means that the funding that was allocated to the school has been taken elsewhere.
                          Live means that the school will be receiving funding in the future."
-                         style="font-weight: normal" data-position="left">
-                        Funding Status
-                    </div>
-                    <div class="chart-stage pie">
-                        <div id="funding-status-pie"></div>
-                    </div>
-                </div>
-            </div>
-            <!--End Chart Funding Status Pie-->
-            <!--Start Chart Time Series -->
-            <div class="col-sm-12">
-                <div class="chart-wrapper">
-                    <div class="chart-title" data-step="6" data-intro="A time-line of donations made."
-                         style="font-weight: normal" data-position="right">
-                        Number of Donations Made
-                    </div>
-                    <div class="chart-stage">
-                        <div id="time-chart"></div>
+                             style="font-weight: normal" data-position="left">
+                            Funding Status
+                        </div>
+                        <div class="chart-stage pie">
+                            <div id="funding-status-pie"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!--End Chart Time Series-->
-        </div>
-    </div>
-    <!--Start Resources Bar Chart-->
-    <div class="col-lg-3 col-sm-6">
-        <div class="chart-wrapper">
-            <div class="chart-title" data-step="7"
-                 data-intro="The type and amount of resources donated through DonorsChoose.org."
-                 style="font-weight: normal" data-position="left">
-                Resources Donated
-            </div>
-            <div class="chart-stage">
-                <div id="resource-type-rc"></div>
-            </div>
-        </div>
-    </div>
-    <!--End Resources Bar Chart-->
-    <!--Start Teach for America Pie Chart-->
-    <div class="col-lg-3 col-sm-6">
-        <div class="chart-wrapper">
-            <div class="chart-title" data-step="8"
-                 data-intro="The amount of 'Teach for America' Teachers available." style="font-weight: normal" data-position="right">
-                'Teach for America' Teacher Available
-            </div>
-            <div class="chart-stage pie">
-                <div id="tf-america-pie"></div>
+                <!--End Chart Funding Status Pie-->
+                <!--Start Chart Time Series -->
+                <div class="col-sm-12">
+                    <div class="chart-wrapper">
+                        <div class="chart-title" data-step="6" data-intro="A time-line of donations made."
+                             style="font-weight: normal" data-position="right">
+                            Number of Donations Made
+                        </div>
+                        <div class="chart-stage">
+                            <div id="time-chart"></div>
+                        </div>
+                    </div>
+                </div>
+                <!--End Chart Time Series-->
             </div>
         </div>
-    </div>
-    <!--End Teach for America Pie Chart-->
-    <!--Start School Grade Levels Chart-->
-    <div class="col-lg-3 col-sm-6">
-        <div class="chart-wrapper ">
-            <div class="chart-title" data-step="9"
-                 data-intro="The school grade levels of pupils at selected school states."
-                 style="font-weight: normal" data-position="left">
-                School Grade Levels
-            </div>
-            <div class="chart-stage pie">
-                <div id="grade-level-pie"></div>
-            </div>
-        </div>
-    </div>
-    <!--End School Grade Levels Chart-->
-    <!--Start Primary Focus Areas Bar Chart -->
-    <div class="col-lg-3 col-sm-6">
-        <div class="chart-wrapper">
-            <div class="chart-title" data-step="10"
-                 data-intro="This chart shows the primary focus areas of selected school states."
-                 style="font-weight: normal" data-position="left">
-                Primary Focus Areas
-            </div>
-            <div class="chart-stage">
-                <div id="pf-area-rc"></div>
+        <!--Start Resources Bar Chart-->
+        <div class="col-lg-3 col-sm-6">
+            <div class="chart-wrapper">
+                <div class="chart-title" data-step="7"
+                     data-intro="The type and amount of resources donated through DonorsChoose.org."
+                     style="font-weight: normal" data-position="left">
+                    Resources Donated
+                </div>
+                <div class="chart-stage">
+                    <div id="resource-type-rc"></div>
+                </div>
             </div>
         </div>
-    </div>
-    <!--End Primary Focus Areas Bar Chart-->
-    <!--Start Primary Focus Subjects Bar Chart-->
-    <div class="col-sm-12">
-        <div class="chart-wrapper">
-            <div class="chart-title" data-step="11"
-                 data-intro="This chart shows the primary focus subjects of selected school states."
-                 style="font-weight: normal" data-position="right">
-                Primary Focus Subjects
-            </div>
-            <div class="chart-stage">
-                <div id="pf-subject-rc"></div>
+        <!--End Resources Bar Chart-->
+        <!--Start Teach for America Pie Chart-->
+        <div class="col-lg-3 col-sm-6">
+            <div class="chart-wrapper">
+                <div class="chart-title" data-step="8"
+                     data-intro="The amount of 'Teach for America' Teachers available." style="font-weight: normal" data-position="right">
+                    'Teach for America' Teacher Available
+                </div>
+                <div class="chart-stage pie">
+                    <div id="tf-america-pie"></div>
+                </div>
             </div>
         </div>
-    </div>
-    <!--End Primary Focus Subjects Bar Chart-->
-    <!-- Data table Chart -->
-    <div class ="col-sm-12">
-        <div class="chart-wrapper">
-            <div class="chart-title" data-step="12"
-                 data-intro="This table provides information on donations made to the six school states, the value of
+        <!--End Teach for America Pie Chart-->
+        <!--Start School Grade Levels Chart-->
+        <div class="col-lg-3 col-sm-6">
+            <div class="chart-wrapper ">
+                <div class="chart-title" data-step="9"
+                     data-intro="The school grade levels of pupils at selected school states."
+                     style="font-weight: normal" data-position="left">
+                    School Grade Levels
+                </div>
+                <div class="chart-stage pie">
+                    <div id="grade-level-pie"></div>
+                </div>
+            </div>
+        </div>
+        <!--End School Grade Levels Chart-->
+        <!--Start Primary Focus Areas Bar Chart -->
+        <div class="col-lg-3 col-sm-6">
+            <div class="chart-wrapper">
+                <div class="chart-title" data-step="10"
+                     data-intro="This chart shows the primary focus areas of selected school states."
+                     style="font-weight: normal" data-position="left">
+                    Primary Focus Areas
+                </div>
+                <div class="chart-stage">
+                    <div id="pf-area-rc"></div>
+                </div>
+            </div>
+        </div>
+        <!--End Primary Focus Areas Bar Chart-->
+        <!--Start Primary Focus Subjects Bar Chart-->
+        <div class="col-sm-12">
+            <div class="chart-wrapper">
+                <div class="chart-title" data-step="11"
+                     data-intro="This chart shows the primary focus subjects of selected school states."
+                     style="font-weight: normal" data-position="right">
+                    Primary Focus Subjects
+                </div>
+                <div class="chart-stage">
+                    <div id="pf-subject-rc"></div>
+                </div>
+            </div>
+        </div>
+        <!--End Primary Focus Subjects Bar Chart-->
+        <!-- Data table Chart -->
+        <div class ="col-sm-12">
+            <div class="chart-wrapper">
+                <div class="chart-title" data-step="12"
+                     data-intro="This table provides information on donations made to the six school states, the value of
                  donations, number of donors, the resource type bought, the county, city and students reached as a
                  result and the current status of the funding, whether it is live, expired, completed or reallocated.
                  Please use the Prev and Next buttons to look through the pages of data."
-                 style="font-weight: normal" data-position="top">
-                Table Donations
-            </div>
-            <table id="data-table" class="table table-hover dc-data-table dc-chart">
-                <thead>
-                <tr class='header'>
-                    <th>Date</th>
-                    <th>$ Donations</th>
-                    <th>No of Donors</th>
-                    <th>Resource Type</th>
-                    <th>City</th>
-                    <th>County</th>
-                    <th>Students Reached</th>
-                    <th>Funding Status</th>
-                </tr>
-                </thead>
-            </table>
-            <div id="paging">
-                <input id="prev" class="btn" type="button" value="<< Prev" onclick="javascript:prev()"/>
-                Showing <span id="start"></span>-<span id="end"></span> of <span id="data-count"></span>
-                <input id="next" class="btn" type="button" value="Next >>" onclick="javascript:next()"/>
+                     style="font-weight: normal" data-position="top">
+                    Table Donations
+                </div>
+                <table id="data-table" class="table table-hover dc-data-table dc-chart">
+                    <thead>
+                    <tr class='header'>
+                        <th>Date</th>
+                        <th>$ Donations</th>
+                        <th>No of Donors</th>
+                        <th>Resource Type</th>
+                        <th>City</th>
+                        <th>County</th>
+                        <th>Students Reached</th>
+                        <th>Funding Status</th>
+                    </tr>
+                    </thead>
+                </table>
+                <div id="paging">
+                    <input id="prev" class="btn" type="button" value="<< Prev" onclick="javascript:prev()"/>
+                    Showing <span id="start"></span>-<span id="end"></span> of <span id="data-count"></span>
+                    <input id="next" class="btn" type="button" value="Next >>" onclick="javascript:next()"/>
+                </div>
             </div>
         </div>
+        <!-- End Data table Chart -->
     </div>
-    <!-- End Data table Chart -->
-</div>
 {% endblock %}

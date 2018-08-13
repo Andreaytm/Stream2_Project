@@ -269,7 +269,7 @@ function display() {
     d3.select('#next')
         .attr('disabled', ofs+pag>=parseInt($("#data-count", 10).text()) ? 'true' : null);
     //use jQuery to convert string: #data-count to Integer. Added default radix of 10
- }
+}
 function update() {
     datatable.beginSlice(ofs);
     datatable.endSlice(ofs+pag);
