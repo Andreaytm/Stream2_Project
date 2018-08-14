@@ -151,9 +151,6 @@ div button {
 
 /*TABLE*/
 /*styling for table*/
-.dc-table-group {
-    visibility: collapse;
-}
 thead {
     background-color: #b8c7dd;
 }
