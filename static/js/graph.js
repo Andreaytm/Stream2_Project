@@ -213,6 +213,9 @@ function makeGraphs(error, donationsJson) {
                 return d.funding_status
             }
         ])
+        .sortBy(function (d) {
+            return d.Year;
+        })
         .order(d3.ascending);
 
     datacount
