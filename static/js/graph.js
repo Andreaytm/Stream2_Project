@@ -258,12 +258,14 @@ function makeGraphs(error, donationsJson) {
 }
 console.log(typeof "#data-count"); //test confirmed #data-count is a string
 
-var ofs = 0, pag = 10; //taken and adapted from https://dc-js.github.io/dc.js/docs/html/dc.dataTable.html
+//taken and adapted from https://dc-js.github.io/dc.js/docs/html/dc.dataTable.html &
+//https://dc-js.github.io/dc.js/examples/table-pagination.html
+var ofs = 0, pag = 10;
 function display() {
     d3.select('#start')
         .text(ofs+1);
     d3.select('#end')
-        .text(ofs+pag);
+        .text(ofs+pag-1);
     d3.select('#prev')
         .attr('disabled', ofs-pag<0 ? 'true' : null);
     d3.select('#next')
