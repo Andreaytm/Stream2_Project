@@ -152,7 +152,7 @@ div button {
 /*TABLE*/
 /*styling for table*/
 .dc-table-group {
-    visibility: collapse;
+    visibility: collapse; /*added to collapse year displayed in rows of table*/
 }
 thead {
     background-color: #b8c7dd;

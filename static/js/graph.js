@@ -215,7 +215,7 @@ function makeGraphs(error, donationsJson) {
         ])
         .sortBy(function (d) {
             return d.Year;
-        })
+        }) //Added sort by Year to fix issue of data not displaying
         .order(d3.ascending);
 
     datacount

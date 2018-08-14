@@ -21,7 +21,7 @@ def index():
 @app.route("/about")
 def about():
     """
-    Flask view for second dashboard page
+    About page
     """
     return render_template("about.html")
 
@@ -29,7 +29,7 @@ def about():
 @app.route("/campaign")
 def campaign():
     """
-    Flask view for third dashboard page
+    Campaign page
     """
     return render_template("campaign.html")
 
@@ -37,7 +37,7 @@ def campaign():
 @app.route("/donate")
 def donate():
     """
-    Flask view for fourth dashboard page
+    Donate page
     """
     return render_template("donate.html")
 
