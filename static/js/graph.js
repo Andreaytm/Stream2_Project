@@ -265,12 +265,12 @@ function display() {
     d3.select('#start')
         .text(ofs+1);
     d3.select('#end')
-        .text(ofs+pag-1);
+        .text(ofs+pag);
     d3.select('#prev')
         .attr('disabled', ofs-pag<0 ? 'true' : null);
     d3.select('#next')
-        .attr('disabled', ofs+pag>=parseInt($("#data-count", 10).text()) ? 'true' : null);
-    //use jQuery to convert string: #data-count to Integer. Added default radix of 10
+        .attr('disabled', ofs+pag>=parseInt($("#data-count").text()) ? 'true' : null);
+    //use jQuery to convert string: #data-count to Integer.
 }
 function update() {
     datatable.beginSlice(ofs);

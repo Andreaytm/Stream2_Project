@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a79ab3ef-53b9-43d7-9dc6-a603c7945ae8" name="Default" comment="Updated graphs and content for mobile responsiveness">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/graph.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/graph.js" afterDir="false" />
     </list>
     <list id="1e2fb177-1887-4f1b-966b-592d59496beb" name="Initial deployment" comment="Initial deployment&#10;&#10;(cherry picked from commit 04c7c10d6ff289a00fe85e561a715c8ca27ad0ba)">
       <changelist_data name="Andreaytm" email="andrea.ma@hotmail.co.uk" date="1534189627000">
@@ -10,12 +12,12 @@
         <option name="email" value="andrea.ma@hotmail.co.uk" />
         <option name="name" value="Andreaytm" />
       </changelist_data>
-      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <list id="f5b4dce2-5fff-4083-8db9-173d87a58177" name="Revert &quot;added Procfile&quot;" comment="Revert &quot;added Procfile&quot;&#10;&#10;This reverts commit 7b3916b" />
     <list id="078cae36-4f66-4569-ba88-663bc68955e2" name="Revert &quot;Updated graphs and content for mobile responsiveness&quot;" comment="Revert &quot;Updated graphs and content for mobile responsiveness&quot;&#10;&#10;This reverts commit d601120" />
+    <list id="2f049388-94ee-4e0a-bc49-20848d221e09" name="Revert &quot;updated typo&quot;" comment="Revert &quot;updated typo&quot;&#10;&#10;This reverts commit c99479b">
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +35,7 @@
     <SUITE FILE_PATH="coverage/election_campaign$Flask__school_donations_py_.coverage" NAME="Flask (election_campaign\school_donations.py) Coverage Results" MODIFIED="1532037503707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/election_campaign$Flask__election_campaign_school_donations_py_.coverage" NAME="Flask (election_campaign\donations.py) Coverage Results" MODIFIED="1532039151065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/election_campaign$school_donations.coverage" NAME="school_donations Coverage Results" MODIFIED="1532036441040" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/election_campaign$Flask_donations_py_.coverage" NAME="Flask(donations.py) Coverage Results" MODIFIED="1534201789155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/election_campaign$Flask_donations_py_.coverage" NAME="Flask(donations.py) Coverage Results" MODIFIED="1534278071555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/election_campaign$Unittests_for_test_school_donations_TestSchoolDonations_test_schooldonors.coverage" NAME="Unittests for test_school_donations.TestSchoolDonations.test_schooldonors Coverage Results" MODIFIED="1531670691140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/election_campaign$Flask__election_campaign_donations_py_.coverage" NAME="Flask (election_campaign\donations.py) Coverage Results" MODIFIED="1532638192317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/election_campaign$donations.coverage" NAME="donations Coverage Results" MODIFIED="1532647409954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -88,9 +90,9 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Procfile" value="80" />
-          <entry key="css" value="2788" />
-          <entry key="html" value="8388" />
-          <entry key="js" value="5783" />
+          <entry key="css" value="2792" />
+          <entry key="html" value="8390" />
+          <entry key="js" value="5791" />
           <entry key="md" value="4272" />
           <entry key="py" value="650" />
           <entry key="txt" value="2030" />
@@ -99,9 +101,9 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="2789" />
-          <entry key="HTML" value="8388" />
-          <entry key="JavaScript" value="5782" />
+          <entry key="CSS" value="2793" />
+          <entry key="HTML" value="8390" />
+          <entry key="JavaScript" value="5790" />
           <entry key="Markdown" value="4272" />
           <entry key="PLAIN_TEXT" value="2130" />
           <entry key="Python" value="650" />
@@ -110,12 +112,12 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Procfile" value="4" />
-          <entry key="css" value="23" />
+          <entry key="css" value="24" />
           <entry key="gitignore" value="2" />
           <entry key="html" value="118" />
           <entry key="jpeg" value="5" />
           <entry key="jpg" value="14" />
-          <entry key="js" value="42" />
+          <entry key="js" value="43" />
           <entry key="md" value="6" />
           <entry key="py" value="24" />
           <entry key="txt" value="4" />
@@ -124,10 +126,10 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="23" />
+          <entry key="CSS" value="24" />
           <entry key="HTML" value="118" />
           <entry key="Image" value="19" />
-          <entry key="JavaScript" value="42" />
+          <entry key="JavaScript" value="43" />
           <entry key="Markdown" value="6" />
           <entry key="PLAIN_TEXT" value="14" />
           <entry key="Python" value="24" />
@@ -163,8 +165,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="209" column="10" selection-start-line="209" selection-start-column="10" selection-end-line="209" selection-end-column="10" />
+            <state relative-caret-position="197">
+              <caret line="134" column="44" selection-start-line="134" selection-start-column="44" selection-end-line="134" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/js/graph.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="289" lean-forward="true" selection-start-line="289" selection-end-line="289" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="197">
+              <caret line="162" column="26" lean-forward="true" selection-start-line="162" selection-start-column="26" selection-end-line="162" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -173,15 +193,15 @@
         <entry file="file://$PROJECT_DIR$/Procfile">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="27" selection-start-column="27" selection-end-column="27" />
+              <caret column="3" lean-forward="true" selection-start-column="3" selection-end-column="3" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/about.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
+            <state relative-caret-position="85">
               <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
             </state>
           </provider>
@@ -228,7 +248,7 @@
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
-    <option name="RESET_MODE" value="KEEP" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="GithubProjectSettings">
     <option name="CREATE_PULL_REQUEST_DEFAULT_BRANCH" value="master" />
@@ -256,7 +276,6 @@
         <option value="$PROJECT_DIR$/templates/navbar.html" />
         <option value="$PROJECT_DIR$/static/js/hideButtons.js" />
         <option value="$PROJECT_DIR$/static/css/devicesize.css" />
-        <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/templates/500.html" />
         <option value="$PROJECT_DIR$/templates/404.html" />
         <option value="$PROJECT_DIR$/templates/donate.html" />
@@ -268,10 +287,11 @@
         <option value="$PROJECT_DIR$/runtime.txt" />
         <option value="$PROJECT_DIR$/election_campaign.py" />
         <option value="$PROJECT_DIR$/donations.py" />
-        <option value="$PROJECT_DIR$/static/js/graph.js" />
+        <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/templates/about.html" />
         <option value="$PROJECT_DIR$/templates/index.html" />
-        <option value="$PROJECT_DIR$/Procfile" />
+        <option value="$PROJECT_DIR$/static/css/style.css" />
+        <option value="$PROJECT_DIR$/static/js/graph.js" />
       </list>
     </option>
   </component>
@@ -286,7 +306,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds">
     <option name="x" value="676" />
     <option name="width" value="697" />
     <option name="height" value="735" />
@@ -308,6 +328,12 @@
               <item name="election_campaign" type="b2602c69:ProjectViewProjectNode" />
               <item name="election_campaign" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="election_campaign" type="b2602c69:ProjectViewProjectNode" />
+              <item name="election_campaign" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="election_campaign" type="b2602c69:ProjectViewProjectNode" />
@@ -881,7 +907,7 @@
     <frame x="676" y="0" width="697" height="735" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49438202" weight="0.4709576" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49438202" visible="true" weight="0.0" />
       <window_info id="Structure" order="1" sideWeight="0.505618" side_tool="true" weight="0.25574425" />
       <window_info id="Favorites" order="2" sideWeight="0.5051546" side_tool="true" weight="0.27731094" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -892,10 +918,10 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32894737" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.5091965" visible="true" weight="0.3628159" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="8" sideWeight="0.5091965" visible="true" weight="0.0" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.31506848" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.647943" weight="0.32876712" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.31345826" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.647943" weight="0.32197616" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.35205695" side_tool="true" weight="0.49046323" />
       <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="14" weight="0.32851985" />
@@ -1086,13 +1112,6 @@
     <entry file="file://$PROJECT_DIR$/static/assets/img/schoolbus.jpg" />
     <entry file="file://$PROJECT_DIR$/static/assets/img/books.jpg" />
     <entry file="file://$PROJECT_DIR$/static/css/devicesize.css" />
-    <entry file="file://$PROJECT_DIR$/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="207" column="19" lean-forward="true" selection-start-line="207" selection-start-column="19" selection-end-line="207" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/500.html" />
     <entry file="file://$PROJECT_DIR$/templates/404.html" />
     <entry file="file://$PROJECT_DIR$/static/lib/js/data-table.js">
@@ -1153,13 +1172,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/graph.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="257" column="1" lean-forward="true" selection-start-line="256" selection-start-column="19" selection-end-line="257" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
@@ -1187,24 +1199,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="209" column="10" selection-start-line="209" selection-start-column="10" selection-end-line="209" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Procfile">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="27" selection-start-column="27" selection-end-column="27" />
+          <caret column="3" lean-forward="true" selection-start-column="3" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/about.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
+        <state relative-caret-position="85">
           <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="134" column="44" selection-start-line="134" selection-start-column="44" selection-end-line="134" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="162" column="26" lean-forward="true" selection-start-line="162" selection-start-column="26" selection-end-line="162" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/graph.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="289" lean-forward="true" selection-start-line="289" selection-end-line="289" />
         </state>
       </provider>
     </entry>
