@@ -2,14 +2,13 @@ queue()
     .defer(d3.json, "/USdonors/donations")
     .await(makeGraphs);
 
-function makeGraphs(error, donationsJson) {
+function makeGraphs(error, donorsDonations) {
     if (error) {
         console.error("makeGraphs error on receiving dataset:", error.statusText);
         throw error;
     }
 
     //Clean donorsdonations data
-    var donorsDonations = donationsJson;
     var dateFormat = d3.time.format("%d/%m/%Y %H:%M");
     console.log(dateFormat); //returned %d/%m/%Y %H:%M
     donorsDonations.forEach(function (d) {
