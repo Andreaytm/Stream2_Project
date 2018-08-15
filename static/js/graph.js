@@ -188,7 +188,7 @@ function makeGraphs(error, donationsJson) {
         .size(Infinity)
         .columns([
             function (d) {
-                return d.date_posted.getMonth()+1
+                return ("0" + (d.date_posted.getMonth()+1)).slice(-2)
                     + "-" + d.date_posted.getFullYear();
             },
             function (d) {
