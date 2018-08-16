@@ -2,13 +2,14 @@ queue()
     .defer(d3.json, "/USdonors/donations")
     .await(makeGraphs);
 
-function makeGraphs(error, donorsDonations) {
+function makeGraphs(error, donationsJson) {
     if (error) {
         console.error("makeGraphs error on receiving dataset:", error.statusText);
         throw error;
     }
 
     //Clean donorsdonations data
+    var donorsDonations = donationsJson;
     var dateFormat = d3.time.format("%d/%m/%Y %H:%M");
     console.log(dateFormat); //returned %d/%m/%Y %H:%M
     donorsDonations.forEach(function (d) {
@@ -262,30 +263,36 @@ console.log(typeof "#data-count"); //test confirmed #data-count is a string
 
 //taken and adapted from https://dc-js.github.io/dc.js/docs/html/dc.dataTable.html &
 //https://dc-js.github.io/dc.js/examples/table-pagination.html
-var ofs = 0, pag = 10;
+var startpt = 0, endpt = 10; //changed variables to be more meaningful
 function display() {
     d3.select('#start')
-        .text(ofs+1);
+        .text(startpt+1);
     d3.select('#end')
-        .text(ofs+pag);
+        .text(startpt+endpt);
     d3.select('#prev')
-        .attr('disabled', ofs-pag<0 ? 'true' : null);
+        .attr('disabled', startpt-endpt<0 ? 'true' : null);
     d3.select('#next')
-        .attr('disabled', ofs+pag>=parseInt($("#data-count").text()) ? 'true' : null);
+        .attr('disabled', startpt+endpt>=parseInt($("#data-count").text()) ? 'true' : null);
     //use jQuery to convert string: #data-count to Integer.
 }
 function update() {
-    datatable.beginSlice(ofs);
-    datatable.endSlice(ofs+pag);
+    datatable.beginSlice(startpt);
+    datatable.endSlice(startpt+endpt);
     display();
 }
 function prev() {
-    ofs -= pag;
+    startpt -= endpt;
     update();
     datatable.redraw();
 }
 function next() {
-    ofs += pag;
+    startpt += endpt;
+    update();
+    datatable.redraw();
+}
+//Added reset table function
+function resetTable() {
+    startpt = 0;
     update();
     datatable.redraw();
 }
