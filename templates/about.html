@@ -1,17 +1,17 @@
 {% extends "layout.html" %}
 {% block title %}About -School Donations Data{% endblock %}
 {% block content %}
-    <div id="about" class="container-fluid">
+    <section id="about-graphs-dashboard" class="container-fluid">
         <div class="row">
             <h1>About</h1>
-            <div class="col-sm-6" id="about-dashboard">
+            <section class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="about-dashboard">
                 <h2>School Donations Data Dashboard</h2>
                 <p> The School Donations Data Dashboard displays statistics of donations given per school state.
                     US States were chosen at random to provide a snapshot of the impact of DonorsChoose donations and
                     the current education improvements made within these US States.
                 </p>
-            </div>
-            <div class="col-sm-6" id="about-graphs">
+            </section>
+            <section class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="about-graphs">
                 <h2>Graphs & Charts</h2>
                 <p>The data displayed includes: charts, graphs and tables of:</p>
                 <ul>
@@ -26,71 +26,75 @@
                     <li>Primary focus areas, and</li>
                     <li>Primary focus subjects</li>
                 </ul>
-            </div>
+            </section>
         </div>
-    </div>
+    </section>
     <hr>
-    <div class="container">
+    <aside class="container">
         <div class="row">
             <div class="col-sm-12">
                 <h2> About DonorsChoose.org</h2>
                 <br>
                 <p class="quote">"The generous donations made through
-                    <a class="link" href="https://www.donorschoose.org"> DonorsChoose.org</a> is an investment in our
-                    children's future."</p><br>
+                    <a class="link" href="https://www.donorschoose.org" target="_blank"> DonorsChoose.org</a> is an investment in our
+                    children's future."
+                </p>
+                <br>
                 <hr>
-                <div id="Donorschoose" class="carousel slide container col-12" data-ride="carousel">
+                <div id="donorschoose-carousel" class="carousel slide container col-12" data-ride="carousel">
                     <div id ="carousel">
                         <ol class="carousel-indicators">
-                            <li data-target="#Donorschoose" data-slide-to="0" class="active"></li>
-                            <li data-target="#Donorschoose" data-slide-to="1"></li>
-                            <li data-target="#Donorschoose" data-slide-to="2"></li>
+                            <li data-target="#donorschoose-carousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#donorschoose-carousel" data-slide-to="1"></li>
+                            <li data-target="#donorschoose-carousel" data-slide-to="2"></li>
                         </ol>
                         <div class="carousel-inner" role="listbox">
                             <figure class="item active">
-                                <img id="Cody" src="{{ url_for ('static', filename = 'assets/img/cody.jpeg') }}">
+                                <img id="Cody" alt="close-up image of a boy" src="{{ url_for ('static', filename = 'assets/img/cody.jpeg') }}">
                                 <div class="carousel-caption">
                                     <h3> Meet Cody</h3>
-                                    <p>"Because of <a class="link" href="https://www.donorschoose.org"> DonorsChoose.org
-                                    </a>Cody has all the art supplies he needs to express
-                                        his creativity and a wonderful teacher with the skills to help him grow!"</p>
+                                    <p>"Because of <a class="link" href="https://www.donorschoose.org" target="_blank"> DonorsChoose.org
+                                        </a>Cody has all the art supplies he needs to express his creativity and a
+                                        wonderful teacher with the skills to help him grow!"
+                                    </p>
                                 </div>
                             </figure>
                             <figure class="item">
-                                <img id="Eliza" src="{{ url_for ('static', filename = 'assets/img/eliza.jpeg') }}">
+                                <img id="Eliza" alt="image of a smiling girl with playground behind" src="{{ url_for ('static', filename = 'assets/img/eliza.jpeg') }}">
                                 <div class="carousel-caption">
                                     <h3>Meet Eliza</h3>
-                                    <p>"Donations from <a class="link" href="https://www.donorschoose.org">
+                                    <p>"Donations from <a class="link" href="https://www.donorschoose.org" target="_blank">
                                         DonorsChoose.org</a> have provided Eliza and her friends with new colourful
                                         playground equipment. This has allowed her to make new friends and keep active
-                                        at break times!"</p>
+                                        at break times!"
+                                    </p>
                                 </div>
                             </figure>
                             <figure class="item">
-                                <img id="Jacob" src="{{ url_for ('static', filename = 'assets/img/jacob.jpg') }}">
+                                <img id="Jacob" alt="image of a boy playing baseball" src="{{ url_for ('static', filename = 'assets/img/jacob.jpg') }}">
                                 <div class="carousel-caption">
                                     <h3>Meet Jacob</h3>
                                     <p>"Coach Harry has bought brand new kit for the team from uniforms, baseballs,
                                         baseball bats, caps and with some money set aside to treat the teams after the
                                         game. This is Jacob's first game in his new gear. It was all down to the
-                                        generous donors from <a class="link" href="https://www.donorschoose.org">
-                                            DonorsChoose.org</a>which made this happen"
+                                        generous donors from <a class="link" href="https://www.donorschoose.org" target="_blank">
+                                        DonorsChoose.org</a>which made this happen"
                                     </p>
                                 </div>
                             </figure>
                         </div>
                         <!--controls-->
-                        <a class="left carousel-control" href="#Donorschoose" role="button" data-slide="prev">
-                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
+                        <a class="left carousel-control" href="#donorschoose-carousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
                         </a>
-                        <a class="right carousel-control" href="#Donorschoose" role="button" data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
+                        <a class="right carousel-control" href="#donorschoose-carousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </aside>
 {% endblock %}
