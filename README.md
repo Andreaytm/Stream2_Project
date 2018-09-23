@@ -106,7 +106,7 @@ the good work they do for classrooms, students and teachers.
 -   Tested various device sizes: Android, Apple iPad and iPhone online using in-built Google Chrome Developer Tools.
 -   Tested css options of graphs using Developer Tools to identify specific elements and positioning of legends.
 -   A browser related bug exists in Chrome and Opera please see 
-	[**Unresolved Browser Error** ](**Unresolved Browser Error**) for more information and image below
+	[Unresolved Browser Error](#Unresolved Browser Error) for more information and image below
 ![Browser Error](https://github.com/Andreaytm/Stream2_Project/blob/master/static/assets/misc/browser-error.jpg "Chrome and Opera Browser Error")
 
 	
@@ -121,7 +121,7 @@ the good work they do for classrooms, students and teachers.
 	- Please see [behaviour-driven-development](https://github.com/Andreaytm/Stream2_Project/blob/master/static/assets/misc/behaviour-driven-development.pdf) for more details.
 	- testing of general navigation across pages, display and overall aesthetics of the page.
 	- testing across browsers (IE, Edge, Opera, Firefox, Google Chrome) - Both Chrome and Opera have an 
-	    [**Unresolved Browser Error** ](**Unresolved Browser Error**) relating to the data table and sorting.
+	    [Unresolved Browser Error](#Unresolved Browser Error) relating to the data table and sorting.
 	- testing of devices (via Google Chrome Developer Tools) locally and actual devices remotely when deployed on 
 	    Heroku.
 	    
