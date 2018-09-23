@@ -1,17 +1,59 @@
-/*MAIN*/
-/*Navbar Titles*/
+/*------------------------xs < 768 Mobile First styling */
+/*------------------------MAIN*/
+
+
+/*navbar titles*/
+
 .navbar {
-    background: #400743;
-    position: fixed;
+	background: #400743;
+	position: fixed;
 }
 
-/*Body*/
+
+/* h2 elements */
+
+#index h2,
+#campaign h2,
+#donate h2,
+#about h2,
+p,
+h1 {
+	display: inline-block;
+	padding-left: 5px
+}
+
+h1 {
+	font-size: 2.5em;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+/* body */
+
 body.application {
-    background: #b8c7dd;
+	background: #b8c7dd;
 }
 
-/* scrollbutton*/
-#toTop{
+body {
+	line-height: 1.25em;
+	font-family: "Nunito", sans-serif;
+	font-size: 12px;
+}
+
+/* left padding */
+
+#impact p,
+#about-graphs,
+#about-dashboard {
+	padding-left: 5px;
+}
+
+
+/* scroll-button */
+
+#toTop {
 	display: none;
 	position: fixed;
 	right: 20px;
@@ -23,228 +65,210 @@ body.application {
 	background-color: black;
 	color: white;
 	border-radius: 20px;
-    z-index: 1;
+	z-index: 1;
 }
-#toTop:hover{
+
+#toTop:hover {
 	background-color: navy;
 }
 
-/*links*/
-.link{
-    color: #400743;
+/* links */
+
+.link {
+	color: #400743;
 }
 
-/*DASHBOARD-INDEX*/
-/*intro reset buttons*/
-button{
-    background-color: #ffffff;
-    color: #400743;
-    border-radius: 10px;
-    margin: 10px;
-    font-weight: bold;
+/*button elements*/
+
+button,
+.btn {
+	background-color: #ffffff;
+	color: #400743;
+	margin: 10px;
+	padding: 5px 10px;
+	font-weight: bold;
+	text-decoration: none;
+	border-radius: 10px;
+	border-style: outset;
 }
-#index h2{
-    display: inline-block;
-    padding-left: 20px;
-}
+
 div button {
-    display: inline-block;
-    float: right;
-    align-content: center;
+	display: inline-block;
+	float: right;
+	align-content: center;
 }
 
-/*TEXT*/
-/*Chart text for graphs*/
+.button-section {
+	padding-bottom: 40px;
+}
+
+
+/*------------------------TEXT*/
+/* chart text for graphs*/
+
 .chart-stage {
-    background: white;
-    position: relative;
-    font-size: 15px;
-    color: black;
-    vertical-align: middle;
-    text-align: center;
-    padding-top: 12px;
+	background: white;
+	position: relative;
+	color: black;
+	vertical-align: middle;
+	text-align: center;
+	padding-top: 12px;
 }
 
-/*Div Chart Titles*/
-.chart-wrapper .chart-title{
-    background: #000b64;
-    color: white;
+#funding-status-pie.dc-chart .dc-legend,
+.dc-chart .pie-slice,
+.dc-select-menu,
+.dc-chart g.row text,
+.chart-wrapper .chart-title,
+.chart-stage {
+	font-size: 14px;
 }
 
-/*Legend Text*/
+/* div chart titles */
+
+.chart-wrapper .chart-title {
+	background: #000b64;
+	color: white;
+}
+
+/* legend text */
+
 .dc-legend {
-    text-transform: capitalize;
+	text-transform: capitalize;
 }
 
-/*Row chart text*/
+/* row chart text */
+
 .dc-chart g.row text {
-    fill: black;
-    font-size: 14px;
+	fill: black;
 }
 
-/*CHARTS*/
-/*Pie charts*/
+/*------------------------CHARTS*/
+/* Pie charts */
+
 .dc-chart .pie-slice {
-    fill: black;
-    font-size: 14px;
-    font-weight: bold;
-    text-transform: capitalize;
-}
-#grade-level-pie.dc-chart .pie-slice {
-    fill: none;
-}
-.dc-chart .selected path{
-    stroke: #fff;
-}
-#funding-status-pie.dc-chart .pie-slice{
-    fill: none;
-}
-#funding-status-pie.dc-chart .dc-legend {
-    text-transform: capitalize;
-    font-size: 14px;
-    font-weight: bold;
+	fill: black;
 }
 
-/*total value of donations in USD*/
-#total-donations-nd {
-    width: 170px;
-    position: relative;
-    height: 90px;
-    font-size: 50px;
-    color: white;
-    vertical-align: middle;
-    text-align: center;
-    padding-top: 12px;
+#grade-level-pie.dc-chart .pie-slice,
+#funding-status-pie.dc-chart .pie-slice {
+	fill: none;
 }
-#metric_1{
-    background: #33CC99;
+
+.dc-chart .selected path {
+	stroke: #ffffff;
+}
+
+.dc-chart .pie-slice,
+#funding-status-pie.dc-chart .dc-legend {
+	text-transform: capitalize;
+	font-size: 12px;
+	font-weight: bold;
 }
 
 /*total no donations*/
-#number-donations-nd {
-    width: 170px;
-    position: relative;
-    height: 90px;
-    font-size: 50px;
-    color: white;
-    vertical-align: middle;
-    text-align: center;
-    padding-top: 12px;
+/* & total value of donations in USD*/
+
+#number-donations-nd,
+#total-donations-nd {
+	/*WIP*/
+	width: 170px;
+	position: relative;
+	height: 90px;
+	font-size: 20px;
+	color: white;
+	vertical-align: middle;
+	text-align: center;
+	padding-top: 12px;
 }
-#metric_2{
-    background: #c7254e;
+
+#metric_1 {
+	background: #33CC99;
 }
+
+#metric_2 {
+	background: #c7254e;
+}
+
 
 /*select menu*/
+
 .dc-select-menu {
-    background: #0078d7;
-    width: 100%;
-    border: none;
-    position: relative;
-    height: 31px;
-    font-size: 15px;
-    color: white;
-    vertical-align: middle;
-    text-align: center;
-    padding-top: 4px;
+	background: #0078d7;
+	width: 100%;
+	border: none;
+	position: relative;
+	height: 31px;
+	color: white;
+	vertical-align: middle;
+	text-align: center;
+	padding-top: 4px;
 }
 
-/*TABLE*/
-/*styling for table*/
+
+/*------------------------TABLE*/
+
+/* NOTE= Although hidden in xs & sm the table styling same for all sizes */
+/* styling for table */
 .dc-table-group {
-    visibility: collapse; /*added to collapse year displayed in rows of table*/
-}
-thead {
-    background-color: #b8c7dd;
-}
-table th{
-        text-align: center;
-}
-table tr:nth-child(even) {
-    background-color: #d1e2f8;
-}
-table{
-    text-align: center;
-}
-.btn{
-    background-color: #ffffff;
-    color: #400743;
-    border-radius: 10px;
-    margin: 10px;
-    font-weight: bold;
-    border-style: outset;
-}
-#paging{
-    color: #400743;
-    font-weight: bold;
+	visibility: collapse;
+	/* added to collapse year displayed in rows of table */
 }
 
-/*ABOUT*/
-/*carousel*/
-#carousel{
+thead {
+	background-color: #b8c7dd;
+}
+
+table,
+table th {
+	text-align: center;
+}
+
+table tr:nth-child(even) {
+	background-color: #d1e2f8;
+}
+
+#paging {
+	color: #400743;
+	font-weight: bold;
+}
+
+
+/*------------------------ABOUT*/
+/* carousel*/
+
+#carousel {
 	margin: 0 auto;
 	width: 80%;
 	max-height: 600px;
-	overflow: hidden;
-}
-#about h2, p{
-    padding-left: 20px;
-}
-h1{
-    padding-left: 20px;
-}
-.quote{
-    font-style: italic;
-    font-size: 20px;
-    color: #546167;
-}
-#about-graphs{
-    padding-left: 40px;
 }
 
-#about-dashboard{
-    padding-left: 40px;
+.carousel-caption {
+	position: relative;
+	left: auto;
+	right: auto;
 }
 
-/*CAMPAIGN*/
-#classroom{
-    border-radius: 60px;
-    float: left;
-    padding: 30px;
-    width: 450px;
-    height: 300px;
-}
-#stationery{
-    border-radius: 60px;
-    float: right;
-    padding: 30px;
-    width: 450px;
-    height: 300px;
-}
-#campaign h2{
-    display: inline-block;
-    padding-left: 20px;
-}
-#impact p{
-    padding-left: 40px;
-}
-#aim p{
-    padding-left: 500px;
-    padding-right: 20px;
+.carousel-inner {
+	overflow: visible;
 }
 
-/*DONATE*/
-div a.button{
-    border-radius: 10px;
-    background-color: #ffffff;
-    color: #400743;
-    margin: 10px;
-    font-weight: bold;
-    padding: 5px 10px;
-    text-decoration: none;
-    border-style: outset;
+div #Donorschoose {
+	height: 500px;
 }
-#donate h2{
-    display: inline-block;
-    padding-left: 20px;
+
+.quote {
+	font-style: italic;
+	font-size: 16px;
+	color: #546167;
+}
+
+/*------------------------CAMPAIGN*/
+
+#stationery,
+#classroom {
+	border-radius: 60px;
+	padding: 5px;
+	width: 50%;
+	height: auto;
 }

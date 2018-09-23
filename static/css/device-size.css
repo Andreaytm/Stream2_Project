@@ -1,0 +1,296 @@
+/*------------------------sm------------------------*/
+@media(min-width:768px) and (max-width:991px) {
+    /*------------------------MAIN*/
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    body {
+        font-size: 12px;
+        line-height: 1.25em;
+    }
+
+    /*------------------------GRAPHS*/
+    #funding-status-pie.dc-chart .dc-legend,
+    .dc-chart .pie-slice,
+    .dc-select-menu,
+    .dc-chart g.row text,
+    .chart-wrapper .chart-title,
+    .chart-stage {
+        font-size: 14px;
+    }
+
+    #number-donations-nd,
+    #total-donations-nd {
+        font-size: 18px;
+    }
+
+    /*------------------------ABOUT*/
+    /* carousel*/
+
+    .quote {
+        font-size: 16px;
+    }
+
+    #carousel {
+        margin: 0 auto;
+        width: 80%;
+        max-height: 600px;
+    }
+
+    .carousel-caption {
+        position: relative;
+        left : auto;
+        right: auto;
+    }
+
+    .carousel-inner {
+        overflow: visible;
+    }
+    div #Donorschoose {
+        height: 500px;
+    }
+    /*------------------------CAMPAIGN*/
+
+    #stationery,
+    #classroom {
+        border-radius: 60px;
+        padding: 5px;
+        width: 350px;
+        height: auto;
+        float: right;
+    }
+}
+
+/*------------------------md------------------------*/
+@media(min-width:992px) and (max-width:1199px) {
+    /*------------------------MAIN*/
+    h1 {
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    body {
+        font-size: 15px;
+        line-height: 1.5em;
+    }
+
+    /* scroll-button */
+    #toTop {
+        right: 20px;
+        bottom: 80px;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+    }
+
+    /*button elements*/
+    button,
+    .btn {
+        margin: 10px;
+        padding: 5px 10px;
+        border-radius: 10px;
+    }
+
+    /*------------------------GRAPHS*/
+
+    #funding-status-pie.dc-chart .dc-legend,
+    .dc-chart .pie-slice,
+    .dc-select-menu,
+    .dc-chart g.row text,
+    .chart-wrapper .chart-title,
+    .chart-stage {
+        font-size: 14px;
+    }
+
+    #number-donations-nd,
+    #total-donations-nd {
+        font-size: 18px;
+    }
+
+    /*------------------------ABOUT*/
+    /* carousel*/
+    .quote {
+        font-size: 12px;
+    }
+
+    #carousel {
+        margin: 0 auto;
+        width: 80%;
+        max-height: 600px;
+    }
+
+    .carousel-caption {
+        position: relative;
+        left : auto;
+        right: auto;
+    }
+
+    .carousel-inner {
+        overflow: visible;
+    }
+    div #Donorschoose {
+        height: 650px;
+    }
+
+    /*------------------------CAMPAIGN*/
+    #stationery,
+    #classroom {
+        border-radius: 60px;
+        padding:15px;
+        width: 80%;
+        height: auto;
+    }
+
+    #classroom {
+        float: left;
+    }
+
+    #stationery {
+        float: right;
+    }
+}
+
+/*------------------------lg------------------------*/
+@media(min-width:1200px) {
+    /*------------------------MAIN*/
+    /* h2 elements */
+    #index h2,
+    #campaign h2,
+    #donate h2,
+    #about h2, p,
+    h1 {
+        display: inline-block;
+        padding-left: 20px
+    }
+
+    h1{
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    body {
+        line-height: 1.5em;
+        font-size: 15px;
+    }
+
+    /* left padding */
+    #impact p,
+    #about-graphs,
+    #about-dashboard {
+        padding-left: 40px;
+    }
+
+    /* scroll-button */
+    #toTop {
+        right: 20px;
+        bottom: 80px;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+    }
+
+    /*button elements*/
+    button,
+    .btn {
+        margin: 10px;
+        padding: 5px 10px;
+        border-radius: 10px;
+    }
+    /*------------------------GRAPHS*/
+    #funding-status-pie.dc-chart .dc-legend,
+    .dc-chart .pie-slice,
+    .dc-select-menu,
+    .dc-chart g.row text,
+    .chart-wrapper .chart-title,
+    .chart-stage {
+        font-size: 14px;
+    }
+
+    /*total no donations*/
+    /* & total value of donations in USD*/
+
+    #number-donations-nd,
+    #total-donations-nd {
+        width: 170px;
+        height: 90px;
+        font-size: 20px;
+        padding-top: 12px;
+    }
+
+    /* chart text for graphs*/
+    .chart-stage {
+        padding-top: 12px;
+        font-size: 12px;
+    }
+
+    /* legend text */
+    .dc-legend {
+        text-transform: capitalize;
+    }
+
+    /*------------------------CHARTS*/
+    .dc-chart .pie-slice,
+    #funding-status-pie.dc-chart .dc-legend {
+        font-size: 12px;
+    }
+
+    /*select menu*/
+    .dc-select-menu {
+        width: 100%;
+        height: 31px;
+        font-size: 12px;
+        padding-top: 4px;
+    }
+    /*------------------------ABOUT*/
+    /* carousel*/
+
+    .quote {
+        font-size: 12px;
+    }
+
+    #carousel {
+        margin: 0 auto;
+        width: 80%;
+        max-height: 600px;
+    }
+
+    .carousel-caption {
+        position: absolute;
+        left : 20%;
+        right: 20%;
+    }
+
+    .carousel-inner {
+        overflow: hidden;
+    }
+    div #Donorschoose {
+        height: auto;
+    }
+    /*------------------------CAMPAIGN*/
+    #stationery,
+    #classroom {
+        border-radius: 60px;
+        padding:15px;
+        width: 100%;
+        height: auto;
+    }
+
+    #classroom {
+        float: left;
+    }
+
+    #stationery {
+        float: right;
+    }
+}
