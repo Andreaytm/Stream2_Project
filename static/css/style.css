@@ -1,9 +1,7 @@
 /*------------------------xs < 768 Mobile First styling */
 /*------------------------MAIN*/
 
-
 /*navbar titles*/
-
 .navbar {
 	background: #400743;
 	position: fixed;
@@ -11,7 +9,6 @@
 
 
 /* h2 elements */
-
 #index h2,
 #campaign h2,
 #donate h2,
@@ -19,7 +16,7 @@
 p,
 h1 {
 	display: inline-block;
-	padding-left: 5px
+	padding-left: 5px;
 }
 
 h1 {
@@ -31,7 +28,6 @@ h2 {
 }
 
 /* body */
-
 body.application {
 	background: #b8c7dd;
 }
@@ -39,11 +35,15 @@ body.application {
 body {
 	line-height: 1.25em;
 	font-family: "Nunito", sans-serif;
-	font-size: 12px;
+	font-size: 14px;
+}
+
+/*footer*/
+.small {
+    font-size: 90%;
 }
 
 /* left padding */
-
 #impact p,
 #about-graphs,
 #about-dashboard {
@@ -52,7 +52,6 @@ body {
 
 
 /* scroll-button */
-
 #toTop {
 	display: none;
 	position: fixed;
@@ -73,7 +72,6 @@ body {
 }
 
 /* links */
-
 .link {
 	color: #400743;
 }
@@ -106,15 +104,6 @@ div button {
 /*------------------------TEXT*/
 /* chart text for graphs*/
 
-.chart-stage {
-	background: white;
-	position: relative;
-	color: black;
-	vertical-align: middle;
-	text-align: center;
-	padding-top: 12px;
-}
-
 #funding-status-pie.dc-chart .dc-legend,
 .dc-chart .pie-slice,
 .dc-select-menu,
@@ -124,27 +113,50 @@ div button {
 	font-size: 14px;
 }
 
-/* div chart titles */
-
-.chart-wrapper .chart-title {
-	background: #000b64;
+/*select menu*/
+.dc-select-menu {
+	background: #0078d7;
+	width: 100%;
+	border: none;
+	position: relative;
+	height: 31px;
 	color: white;
+	vertical-align: middle;
+	text-align: center;
+	padding-top: 4px;
 }
 
 /* legend text */
-
 .dc-legend {
 	text-transform: capitalize;
 }
 
 /* row chart text */
-
 .dc-chart g.row text {
 	fill: black;
 }
 
-/*------------------------CHARTS*/
+/* div chart titles */
+.chart-wrapper .chart-title {
+	background: #000b64;
+	color: white;
+}
+
+.chart-stage {
+	background: white;
+	position: relative;
+	color: black;
+	vertical-align: middle;
+	text-align: center;
+	padding-top: 12px;
+}
+
 /* Pie charts */
+.dc-chart .pie-slice,
+#funding-status-pie.dc-chart .dc-legend {
+	text-transform: capitalize;
+	font-weight: bold;
+}
 
 .dc-chart .pie-slice {
 	fill: black;
@@ -159,19 +171,11 @@ div button {
 	stroke: #ffffff;
 }
 
-.dc-chart .pie-slice,
-#funding-status-pie.dc-chart .dc-legend {
-	text-transform: capitalize;
-	font-size: 12px;
-	font-weight: bold;
-}
-
 /*total no donations*/
 /* & total value of donations in USD*/
 
 #number-donations-nd,
 #total-donations-nd {
-	/*WIP*/
 	width: 170px;
 	position: relative;
 	height: 90px;
@@ -190,37 +194,15 @@ div button {
 	background: #c7254e;
 }
 
-
-/*select menu*/
-
-.dc-select-menu {
-	background: #0078d7;
-	width: 100%;
-	border: none;
-	position: relative;
-	height: 31px;
-	color: white;
-	vertical-align: middle;
-	text-align: center;
-	padding-top: 4px;
-}
-
-
 /*------------------------TABLE*/
 
 /* NOTE= Although hidden in xs & sm the table styling same for all sizes */
 /* styling for table */
 .dc-table-group {
-	visibility: collapse;
-	/* added to collapse year displayed in rows of table */
+	visibility: collapse; /* added to collapse year displayed in rows of table */
 }
 
-thead {
-	background-color: #b8c7dd;
-}
-
-table,
-table th {
+table {
 	text-align: center;
 }
 
@@ -228,15 +210,23 @@ table tr:nth-child(even) {
 	background-color: #d1e2f8;
 }
 
+th {
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #b8c7dd;
+}
+
+td {
+    font-size: 14px;
+}
+
 #paging {
 	color: #400743;
 	font-weight: bold;
 }
 
-
 /*------------------------ABOUT*/
 /* carousel*/
-
 #carousel {
 	margin: 0 auto;
 	width: 80%;
@@ -250,11 +240,16 @@ table tr:nth-child(even) {
 }
 
 .carousel-inner {
-	overflow: visible;
+	overflow: hidden;
 }
 
-div #Donorschoose {
+div #donorschoose-carousel {
 	height: 500px;
+}
+
+.carousel-inner p {
+    line-height: 1.5em;
+    font-size: 12px;
 }
 
 .quote {
@@ -269,6 +264,7 @@ div #Donorschoose {
 #classroom {
 	border-radius: 60px;
 	padding: 5px;
-	width: 50%;
+	width: 100%;
 	height: auto;
+	float: none;
 }
