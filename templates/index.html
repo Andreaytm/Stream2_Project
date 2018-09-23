@@ -8,7 +8,8 @@
                 <div class="col-sm-12">
                     <h2>School Donations Dashboard</h2>
                     <div class="button-section">
-                        <button class="intro_button" type="button" autofocus onclick ="introJs().start();">
+                        <button class="intro_button hidden-xs hidden-sm" type="button"
+                                autofocus onclick ="introJs().start();">
                         <i class="glyphicon glyphicon-send"></i> Click for a quick tour!</button>
                         <button class="reset_button" type="button" onclick ="dc.filterAll();resetTable();
                             dc.renderAll();"><i class="glyphicon glyphicon-refresh"></i> Reset All</button>
@@ -19,10 +20,10 @@
                 <!--Start Chart Select State (Menu Select)-->
                 <div class="col-sm-12">
                     <div class="chart-wrapper">
-                        <div class="chart-title" data-step="1" data-intro="Use the drop-down menu to see statistics for
-                            donations given per school state. US states were chosen at random to provide a snapshot of the
-                            impact of DonorsChoose donations and the current education improvements made within each of these
-                            US States." style="font-weight: normal" data-position="right">
+                        <div class="chart-title" data-step="1" data-intro="Use the drop-down menu to see statistics
+                        for donations given per school state. US states were chosen at random to provide a snapshot of
+                        the impact of DonorsChoose donations and the current education improvements made within each of
+                        these US States." style="font-weight: normal" data-position="right">
                             Donation State
                         </div>
                         <div class="chart-stage">
@@ -136,7 +137,7 @@
         <!--End Teach for America Pie Chart-->
         <!--Start School Grade Levels Chart-->
         <div class="col-sm-12 col-md-6 col-lg-3">
-            <div class="chart-wrapper ">
+            <div class="chart-wrapper">
                 <div class="chart-title" data-step="9"
                     data-intro="The school grade levels of pupils at selected school states."
                     style="font-weight: normal" data-position="left">

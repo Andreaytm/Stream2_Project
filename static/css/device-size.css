@@ -38,7 +38,7 @@
     .dc-chart g.row text,
     .chart-wrapper .chart-title,
     .chart-stage {
-        font-size: 18px;
+        font-size: 14px;
     }
 
     /*total no donations*/
@@ -47,7 +47,7 @@
     #number-donations-nd,
     #total-donations-nd {
         font-size: 60px;
-        padding-top: 30px;
+        padding-top: 35px;
     }
 
     /*------------------------ABOUT*/
@@ -69,8 +69,8 @@
     /*------------------------CAMPAIGN*/
     #stationery,
     #classroom {
-        padding:15px;
-        width: 20%;
+        padding: 15px;
+        width: 80%;
         float: right;
     }
 }
@@ -104,13 +104,14 @@
 
     #number-donations-nd,
     #total-donations-nd {
-        font-size: 40px;
+        font-size: 60px;
     }
 
     /*------------------------ABOUT*/
     /* carousel*/
     .quote {
-        font-size: 12px;
+        font-size: 20px;
+        line-height: 1.5em;
     }
 
     div #donorschoose-carousel {
@@ -127,13 +128,6 @@
     #classroom {
         padding: 15px;
         width: 80%;
-    }
-
-    #classroom {
-        float: left;
-    }
-
-    #stationery {
         float: right;
     }
 }
@@ -166,7 +160,7 @@
 
     #number-donations-nd,
     #total-donations-nd {
-        font-size: 30px;
+        font-size: 50px;
     }
 
     /*------------------------ABOUT*/

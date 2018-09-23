@@ -11,14 +11,16 @@
                     the current education improvements made within these US States.
                 </p>
                 <br>
+                <br>
                 <p>
                     The data is best displayed on a laptop or computer desktop, on a medium to large screen device.
                     This is any device with a minimum screen width of 992px. The dashboard is viewable on other devices
                     however the following data will not be viewable on smaller devices:
                     <ul>
                         <li>Number of donations made over the years</li>
-                        <li>Primary focus subjects, and</li>
-                        <li>Summary table of donations and reach</li>
+                        <li>Primary focus subjects</li>
+                        <li>Summary table of donations and reach, and</li>
+                        <li>Tooltips Tour button</li>
                     </ul>
                 </p>
             </section>
@@ -48,49 +50,48 @@
                 <h2> About DonorsChoose.org</h2>
                 <br>
                 <p class="quote">"The generous donations made through
-                    <a class="link" href="https://www.donorschoose.org" target="_blank"> DonorsChoose.org</a> is an investment in our
-                    children's future."
+                    <a class="link" href="https://www.donorschoose.org" target="_blank"> DonorsChoose.org</a>
+                    is an investment in our children's future."
                 </p>
                 <br>
                 <hr>
                 <div id="donorschoose-carousel" class="carousel slide container col-12" data-ride="carousel">
                     <div id ="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#donorschoose-carousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#donorschoose-carousel" data-slide-to="1"></li>
-                            <li data-target="#donorschoose-carousel" data-slide-to="2"></li>
-                        </ol>
                         <div class="carousel-inner" role="listbox">
                             <figure class="item active">
-                                <img id="Cody" alt="close-up image of a boy" src="{{ url_for ('static', filename = 'assets/img/cody.jpeg') }}">
+                                <img id="Cody" alt="close-up image of a boy"
+                                     src="{{ url_for ('static', filename = 'assets/img/cody.jpeg') }}">
                                 <div class="carousel-caption">
                                     <h3> Meet Cody</h3>
-                                    <p>"Because of <a class="link" href="https://www.donorschoose.org" target="_blank"> DonorsChoose.org
-                                        </a>Cody has all the art supplies he needs to express his creativity and a
-                                        wonderful teacher with the skills to help him grow!"
+                                    <p>"Because of <a class="link" href="https://www.donorschoose.org" target="_blank">
+                                        DonorsChoose.org </a>Cody has all the art supplies he needs to express his
+                                        creativity and a wonderful teacher with the skills to help him grow!"
                                     </p>
                                 </div>
                             </figure>
                             <figure class="item">
-                                <img id="Eliza" alt="image of a smiling girl with playground behind" src="{{ url_for ('static', filename = 'assets/img/eliza.jpeg') }}">
+                                <img id="Eliza" alt="image of a smiling girl with playground behind"
+                                     src="{{ url_for ('static', filename = 'assets/img/eliza.jpeg') }}">
                                 <div class="carousel-caption">
                                     <h3>Meet Eliza</h3>
-                                    <p>"Donations from <a class="link" href="https://www.donorschoose.org" target="_blank">
-                                        DonorsChoose.org</a> have provided Eliza and her friends with new colourful
-                                        playground equipment. This has allowed her to make new friends and keep active
-                                        at break times!"
+                                    <p>"Donations from <a class="link" href="https://www.donorschoose.org"
+                                                          target="_blank">DonorsChoose.org</a>
+                                        have provided Eliza and her friends with new colourful playground equipment.
+                                        This has allowed her to make new friends and keep active at break times!"
                                     </p>
                                 </div>
                             </figure>
                             <figure class="item">
-                                <img id="Jacob" alt="image of a boy playing baseball" src="{{ url_for ('static', filename = 'assets/img/jacob.jpg') }}">
+                                <img id="Jacob" alt="image of a boy playing baseball"
+                                     src="{{ url_for ('static', filename = 'assets/img/jacob.jpg') }}">
                                 <div class="carousel-caption">
                                     <h3>Meet Jacob</h3>
                                     <p>"Coach Harry has bought brand new kit for the team from uniforms, baseballs,
                                         baseball bats, caps and with some money set aside to treat the teams after the
                                         game. This is Jacob's first game in his new gear. It was all down to the
-                                        generous donors from <a class="link" href="https://www.donorschoose.org" target="_blank">
-                                        DonorsChoose.org</a>which made this happen"
+                                        generous donors from <a class="link" href="https://www.donorschoose.org"
+                                                                target="_blank">DonorsChoose.org</a>
+                                        which made this happen"
                                     </p>
                                 </div>
                             </figure>
