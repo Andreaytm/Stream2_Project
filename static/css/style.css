@@ -202,7 +202,8 @@ div button {
 	visibility: collapse; /* added to collapse year displayed in rows of table */
 }
 
-table {
+table,
+table th {
 	text-align: center;
 }
 

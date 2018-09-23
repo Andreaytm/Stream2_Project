@@ -1,116 +1,3 @@
-/*------------------------sm------------------------*/
-@media(min-width:768px) and (max-width:991px) {
-    /*------------------------MAIN*/
-    h1 {
-        font-size: 2.5em;
-    }
-
-    h2 {
-        font-size: 2em;
-    }
-
-    body {
-        font-size: 14px;
-        line-height: 1.25em;
-    }
-
-    /*------------------------GRAPHS*/
-    #funding-status-pie.dc-chart .dc-legend,
-    .dc-chart .pie-slice,
-    .dc-select-menu,
-    .dc-chart g.row text,
-    .chart-wrapper .chart-title,
-    .chart-stage {
-        font-size: 14px;
-    }
-
-    #number-donations-nd,
-    #total-donations-nd {
-        font-size: 30px;
-    }
-
-    /*------------------------ABOUT*/
-    /* carousel*/
-
-    div #donorschoose-carousel {
-        height: 500px;
-    }
-    .carousel-inner p {
-        line-height: 1.5em;
-        font-size: 16px;
-    }
-    /*------------------------CAMPAIGN*/
-
-    #stationery,
-    #classroom {
-        width: 350px;
-        float: right;
-    }
-}
-
-/*------------------------md------------------------*/
-@media(min-width:992px) and (max-width:1199px) {
-    /*------------------------MAIN*/
-    h1 {
-        font-size: 3em;
-    }
-
-    h2 {
-        font-size: 2em;
-    }
-
-    body {
-        font-size: 16px;
-        line-height: 1.5em;
-    }
-
-    /*------------------------GRAPHS*/
-
-    #funding-status-pie.dc-chart .dc-legend,
-    .dc-chart .pie-slice,
-    .dc-select-menu,
-    .dc-chart g.row text,
-    .chart-wrapper .chart-title,
-    .chart-stage {
-        font-size: 14px;
-    }
-
-    #number-donations-nd,
-    #total-donations-nd {
-        font-size: 40px;
-    }
-
-    /*------------------------ABOUT*/
-    /* carousel*/
-    .quote {
-        font-size: 12px;
-    }
-
-    div #donorschoose-carousel {
-        height: 650px;
-    }
-
-    .carousel-inner p {
-        line-height: 1.5em;
-        font-size: 18px;
-    }
-
-    /*------------------------CAMPAIGN*/
-    #stationery,
-    #classroom {
-        padding: 15px;
-        width: 80%;
-    }
-
-    #classroom {
-        float: left;
-    }
-
-    #stationery {
-        float: right;
-    }
-}
-
 /*------------------------lg------------------------*/
 @media(min-width:1200px) {
     /*------------------------MAIN*/
@@ -184,6 +71,119 @@
     #classroom {
         padding:15px;
         width: 20%;
+        float: right;
+    }
+}
+
+/*------------------------md------------------------*/
+@media(min-width:992px) and (max-width:1199px) {
+    /*------------------------MAIN*/
+    h1 {
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    body {
+        font-size: 16px;
+        line-height: 1.5em;
+    }
+
+    /*------------------------GRAPHS*/
+
+    #funding-status-pie.dc-chart .dc-legend,
+    .dc-chart .pie-slice,
+    .dc-select-menu,
+    .dc-chart g.row text,
+    .chart-wrapper .chart-title,
+    .chart-stage {
+        font-size: 14px;
+    }
+
+    #number-donations-nd,
+    #total-donations-nd {
+        font-size: 40px;
+    }
+
+    /*------------------------ABOUT*/
+    /* carousel*/
+    .quote {
+        font-size: 12px;
+    }
+
+    div #donorschoose-carousel {
+        height: 650px;
+    }
+
+    .carousel-inner p {
+        line-height: 1.5em;
+        font-size: 18px;
+    }
+
+    /*------------------------CAMPAIGN*/
+    #stationery,
+    #classroom {
+        padding: 15px;
+        width: 80%;
+    }
+
+    #classroom {
+        float: left;
+    }
+
+    #stationery {
+        float: right;
+    }
+}
+
+/*------------------------sm------------------------*/
+@media(min-width:768px) and (max-width:991px) {
+    /*------------------------MAIN*/
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    body {
+        font-size: 14px;
+        line-height: 1.25em;
+    }
+
+    /*------------------------GRAPHS*/
+    #funding-status-pie.dc-chart .dc-legend,
+    .dc-chart .pie-slice,
+    .dc-select-menu,
+    .dc-chart g.row text,
+    .chart-wrapper .chart-title,
+    .chart-stage {
+        font-size: 14px;
+    }
+
+    #number-donations-nd,
+    #total-donations-nd {
+        font-size: 30px;
+    }
+
+    /*------------------------ABOUT*/
+    /* carousel*/
+
+    div #donorschoose-carousel {
+        height: 500px;
+    }
+    .carousel-inner p {
+        line-height: 1.5em;
+        font-size: 16px;
+    }
+    /*------------------------CAMPAIGN*/
+
+    #stationery,
+    #classroom {
+        width: 350px;
         float: right;
     }
 }
