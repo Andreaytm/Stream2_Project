@@ -4,8 +4,7 @@
     <div id="campaign" class="container-fluid">
         <div class="row">
             <h1> Our Campaign</h1>
-            <div class="col-sm-12" id="impact">
-                <img id="stationery" alt="image of pens and pencils" src="{{ url_for ('static', filename = 'assets/img/stationery.jpeg') }}">
+            <div class="col-sm-12 col-md-9" id="impact">
                 <h2>Our Impact</h2>
                 <p class="quote">
                     The funding provided to DonorsChoose is used to support teachers and students.
@@ -14,9 +13,12 @@
                     It is an investment in our future and in our kids lives.
                 </p>
             </div>
+            <div class="col-sm-12 col-md-3">
+                <img id="stationery" alt="image of pens and pencils"
+                     src="{{ url_for ('static', filename = 'assets/img/stationery.jpeg') }}">
+            </div>
             <hr>
-            <div class="col-sm-12" id="aim">
-                <img id="classroom" alt="image of teacher in classroom" src="{{ url_for ('static', filename = 'assets/img/classroom.jpg') }}">
+            <div class="col-sm-12 col-md-9" id="aim">
                 <h2>Our Aim</h2>
                 <br>
                 <p class="quote">
@@ -25,6 +27,10 @@
                     location. We hope to have equal education for everyone. That each student and teacher is
                     provided with what they need to study, to learn and to teach.
                 </p>
+            </div>
+            <div class="col-sm-12 col-md-3">
+                <img id="classroom" alt="image of teacher in classroom"
+                     src="{{ url_for ('static', filename = 'assets/img/classroom.jpg') }}">
             </div>
         </div>
     </div>
