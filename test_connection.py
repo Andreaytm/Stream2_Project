@@ -157,108 +157,11 @@ print coll.count()  # 386455
 
 # Note test 3 is successful printed counts of data from school_states requested
 
-
-""" Note require additional reduction of database - current includes states:
-IL, SC, TX, IN, TN, KS, CO, MA, RI, MI, MN, AZ, KY, 
-UT, OH, FL, OR, GA, NV, ID, WI, HI, NH, MT, AR, AK
-"""
-
-"""RESULTS OF COUNT
-IL count *remove*
-49669
-----------------------------------
-SC count *remove*
-24735
-----------------------------------
-TX count *remove*
-55114
-----------------------------------
-IN count *remove*
-22412
-----------------------------------
-TN count *remove*
-18661
-----------------------------------
-KS count
-3937
-----------------------------------
-CO count *remove*
-9510
-----------------------------------
-MA count *remove*
-13891
-----------------------------------
-RI count *remove*
-2786
-----------------------------------
-MI count *remove*
-17688
-----------------------------------
-MN count
-6392
-----------------------------------
-AZ count *remove*
-13573
-----------------------------------
-KY count  
-6324
-----------------------------------
-UT count *remove*
-12339
-----------------------------------
-OH count *remove*
-11551
-----------------------------------
-FL count *remove*
-43023
-----------------------------------
-OR count *remove*
-9451
-----------------------------------
-GA count *remove*
-23814
-----------------------------------
-NV count *remove*
-11146
-----------------------------------
-ID count
-3206
-----------------------------------
-WI count *remove*
-9561
-----------------------------------
-HI count
-3921
-----------------------------------
-NH count *remove*
-2068
-----------------------------------
-MI count *remove*
-1343
-----------------------------------
-AR count *remove*
-8234
-----------------------------------
-AK count
-2106
-----------------------------------
-Collection: Donations count
-386455
-
-Above count based on initial database before reduction of data via removal of school_states
-"""
-
-# Removed more data to limit upload speed via mongo
-# Selection of school_states to be removed based on count similar to DE
-
-"""
-New collection includes following states = KS, MN, KY, ID, HI, DE*, AK (* = project school_state)
-Kept random number states for comparative purposes.
-"""
 print "----------------------------------"
 
 print "RR count"
 results = coll.find({"school_state": "RR"})
 print results.count()  # should display 0
 
-# Note test 4 is successful, printed 0 results count for school_state that is non-existent
+# Note test 4 is successful, printed 0 results count
+#  for school_state that is non-existent

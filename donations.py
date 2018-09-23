@@ -18,6 +18,7 @@ def index():
     """
     return render_template("index.html")
 
+
 @app.route("/about")
 def about():
     """
@@ -54,8 +55,9 @@ def school_donors():
         'resource_type': True, 'poverty_level': True,
         'date_posted': True, 'total_donations': True,
         'primary_focus_area': True, 'primary_focus_subject': True,
-        'teacher_teach_for_america': True, 'school_city': True, 'school_county': True,
-        'students_reached': True, 'num_donors': True, 'grade_level': True
+        'teacher_teach_for_america': True, 'school_city': True,
+        'school_county': True, 'students_reached': True, 'num_donors': True,
+        'grade_level': True
     }
 
     # Open a connection to MongoDB using a 'with' statement such that the
@@ -63,7 +65,8 @@ def school_donors():
     with MongoClient(MONGO_URI) as conn:
         # Define wish to access collection: donations
         collection = conn[DBS_NAME][COLLECTION_NAME]
-        # Retrieve result set only with fields defined in FIELDS, given count no need to limit results
+        # Retrieve result set only with fields defined in FIELDS,
+        # given count no need to limit results
         donations = collection.find(projection=FIELDS, limit=20000)
         # Convert donations to a list in a JSON object and return JSON data
         return json.dumps(list(donations))
