@@ -214,7 +214,7 @@ charts and graphs. For optimal functionality I would advise you to use IE, Edge 
     - [Heroku](https://www.heroku.com) and [mLab](https://mlab.com) for deployment.
     - [Intro.js](https://introjs.com) and Introjs.css providing pop-up tooltip tour of the dashboard.
     - [Keen.js](https://github.com/keen/keen-js) was used in conjunction with bootstrap to layout dashboard elements.
-    - [Mongo DB](https://www.mongodb.com): NoSQL Database used to convert and present our data in JSON format.
+    - [MongoDB](https://www.mongodb.com): NoSQL Database used to convert and present our data in JSON format.
     - [Queue.js](https://github.com/d3/d3-queue) controlled running of tasks in this case by deferring loading of data 
     till graphs were made.
     - [Mongo Management Studio](http://mms.litixsoft.de/index.php?lang=en) was used to test the data on Heroku was 
@@ -233,7 +233,7 @@ charts and graphs. For optimal functionality I would advise you to use IE, Edge 
 for templating.
 - [Data-table.js](https://dc-js.github.io/dc.js/docs/html/data-table.js.html) for data-table usage
 - [table-pagination](https://dc-js.github.io/dc.js/examples/table-pagination.html) for pagination. 
-- [DonorsChoose](https://www.donorschoose.org) and CodeInstitute for the data.
+- [DonorsChoose](https://www.donorschoose.org) and [Code Institute](https://www.codeinstitute.net/) for the data.
 - Glyphicons from [Font Awesome](https://fontawesome.bootstrapcheatsheets.com)
 - [Pexels](https://www.pexels.com) for free photos. Special mention to Pixabay and Nappy.
 - Scrollbutton adapted from [w3schools.com](www.w3schools.com).
